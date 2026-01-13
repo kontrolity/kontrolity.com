@@ -16,8 +16,10 @@ export default function Logo({ className = "", size = "md", theme = "dark" }) {
         alt="Kontrolity Logo"
         className={currentSize}
       />
-      <span className={`text-xl font-bold tracking-tight ml-1 ${theme === 'dark' ? 'bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent' : 'text-slate-900'}`}>
-        <span className="text-2xl">K</span>ontrolity
+      <span className="text-xl font-bold tracking-tight ml-1">
+        <span className={`text-2xl ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>K</span>
+        <span className={theme === 'dark' ? 'text-white' : 'text-slate-900'}>ontro</span>
+        <span className={theme === 'dark' ? 'bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent' : 'text-slate-900'}>lity</span>
       </span>
     </div>
   );
