@@ -7,8 +7,8 @@ export default function CustomersSection() {
   const isInView = useInView(ref, { once: true });
 
   const customers = [
-    'GitHub', 'Netflix', 'Stripe', 'Airbnb', 'Uber', 'Spotify',
-    'Tesla', 'Meta', 'Amazon', 'Google', 'Microsoft', 'Apple'
+    'TechFlow', 'CloudNova', 'DataSync', 'DevOps360', 'InfraHub', 'SystemX',
+    'NetCore', 'CodeBase', 'CloudFirst', 'AppScale', 'DataFlow', 'TechStack'
   ];
 
   return (
