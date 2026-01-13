@@ -36,10 +36,10 @@ export default function HeroSection() {
           >
             <span className="text-white">The</span>{' '}
             <span className="bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent">
-              AI Brain
+              AI Control Layer
             </span>
             <br />
-            <span className="text-white">for your infrastructure</span>
+            <span className="text-white">for Infrastructure</span>
           </motion.h1>
 
           {/* Subheading */}
@@ -47,10 +47,19 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="text-xl md:text-2xl text-slate-400 mb-12 leading-relaxed max-w-3xl mx-auto"
+            className="text-xl md:text-2xl text-slate-400 mb-8 leading-relaxed max-w-3xl mx-auto"
           >
-            Kontrolity transforms chaos into control with autonomous AI that observes,
-            understands, and stabilizes your systems in real-time.
+            Kontrolity builds autonomous intelligence that unifies observability, operations, and security—making infrastructure decisions faster than humans can.
+          </motion.p>
+
+          {/* Supporting Line */}
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.25 }}
+            className="text-base md:text-lg text-slate-500 mb-12 leading-relaxed max-w-3xl mx-auto"
+          >
+            Starting with incident response. Our first product, <a href="https://kubegraf.io" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 font-semibold transition-colors">KubeGraf</a>, reduces Kubernetes MTTR from hours to minutes with autonomous AI that understands context, predicts failures, and takes action.
           </motion.p>
 
           {/* CTAs */}
@@ -61,23 +70,23 @@ export default function HeroSection() {
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
           >
             <a
-              href="#contact"
+              href="https://kubegraf.io"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group relative px-8 py-4 text-base font-semibold text-slate-900 rounded-2xl overflow-hidden shadow-2xl shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-teal-400 group-hover:from-cyan-300 group-hover:to-teal-300 transition-all" />
               <span className="relative flex items-center gap-2">
-                Start Your Journey
+                See KubeGraf in Action
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </span>
             </a>
             <a
-              href="https://kubegraf.io"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#contact"
               className="group flex items-center gap-2 px-8 py-4 text-base font-semibold text-white rounded-2xl border border-white/10 hover:bg-white/5 transition-all"
             >
               <Play className="w-5 h-5" />
-              Watch Demo
+              Talk to Our Team
             </a>
           </motion.div>
 
