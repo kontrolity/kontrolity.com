@@ -59,7 +59,7 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <a href="#" className="flex items-center z-10">
+            <a href="/" className="flex items-center z-10">
               <Logo size="md" theme="dark" />
             </a>
 
