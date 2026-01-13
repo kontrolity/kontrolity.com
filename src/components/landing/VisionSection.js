@@ -52,11 +52,11 @@ export default function VisionSection() {
             </span>
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-            The{' '}
+            Building the{' '}
             <span className="bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent">
-              AI-First
+              Autonomous Infrastructure
             </span>{' '}
-            Infrastructure Company
+            Layer
           </h2>
           <p className="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed">
             Five years from now, no engineering team will manually debug production incidents. Infrastructure will be autonomous—self-healing, self-optimizing, self-securing.
