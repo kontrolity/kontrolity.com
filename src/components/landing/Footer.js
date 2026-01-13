@@ -58,12 +58,9 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-center gap-4">
           <p className="text-sm text-slate-400">
             © 2025 Kontrolity. All rights reserved.
-          </p>
-          <p className="text-xs text-slate-600 text-center">
-            Independent company. Not affiliated with Kubernetes, CNCF, or Grafana Labs.
           </p>
         </div>
       </div>
