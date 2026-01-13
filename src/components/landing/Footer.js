@@ -6,10 +6,11 @@ export default function Footer() {
     Product: [
       { label: 'Platform', href: '#platform' },
       { label: 'KubeGraf', href: 'https://kubegraf.io' },
+      { label: 'ROI & Business Impact', href: '/roi' },
       { label: 'Pricing', href: '#contact' },
     ],
     Company: [
-      { label: 'About', href: '#' },
+      { label: 'About', href: '/about' },
       { label: 'Blog', href: '#' },
       { label: 'Careers', href: '#' },
     ],

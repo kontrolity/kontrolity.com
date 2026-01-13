@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ChevronDown, ArrowRight, Sparkles, Shield, Zap, Database, Activity, GitBranch } from 'lucide-react';
+import { Menu, X, ChevronDown, ArrowRight, Sparkles, Shield, Zap, Database, Activity, GitBranch, BarChart3 } from 'lucide-react';
 import Logo from './Logo';
 
 export default function Navbar() {
@@ -40,6 +40,7 @@ export default function Navbar() {
     Resources: {
       items: [
         { icon: Sparkles, title: 'About Us', desc: 'Learn about our mission and values', href: '/about' },
+        { icon: BarChart3, title: 'ROI & Business Impact', desc: 'Cost savings and business value', href: '/roi' },
         { icon: Sparkles, title: 'Documentation', desc: 'Guides and API references', href: '#docs' },
         { icon: Activity, title: 'Blog', desc: 'Latest updates and insights', href: '#blog' },
         { icon: GitBranch, title: 'Community', desc: 'Join our developer community', href: '#community' },

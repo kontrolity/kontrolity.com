@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Play, Sparkles } from 'lucide-react';
+import { ArrowRight, Play, Sparkles, TrendingUp } from 'lucide-react';
 
 export default function HeroSection() {
   return (
@@ -80,6 +80,13 @@ export default function HeroSection() {
                 See KubeGraf in Action
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </span>
+            </a>
+            <a
+              href="/roi"
+              className="group flex items-center gap-2 px-8 py-4 text-base font-semibold text-white rounded-2xl border border-emerald-500/30 bg-emerald-500/10 hover:bg-emerald-500/20 hover:border-emerald-500/50 transition-all"
+            >
+              <TrendingUp className="w-5 h-5" />
+              See ROI & Business Impact
             </a>
             <a
               href="#contact"
