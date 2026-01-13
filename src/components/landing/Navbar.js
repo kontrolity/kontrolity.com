@@ -129,12 +129,6 @@ export default function Navbar() {
             <div className="hidden lg:flex items-center gap-3">
               <a
                 href="#contact"
-                className="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors"
-              >
-                Contact Sales
-              </a>
-              <a
-                href="#contact"
                 className="group flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-slate-900 bg-gradient-to-r from-cyan-400 to-teal-400 hover:from-cyan-300 hover:to-teal-300 rounded-xl transition-all shadow-lg shadow-cyan-500/25"
               >
                 Get Started
