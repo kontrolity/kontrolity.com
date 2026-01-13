@@ -31,7 +31,9 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12">
         <div className="grid md:grid-cols-6 gap-8 mb-12">
           <div className="md:col-span-2">
-            <Logo size="md" theme="dark" className="mb-4" />
+            <a href="/" className="inline-block mb-4">
+              <Logo size="md" theme="dark" />
+            </a>
             <p className="text-sm text-slate-400 mb-4">
               Building the AI control layer for modern infrastructure. Autonomous systems that observe, understand, and stabilize.
             </p>
