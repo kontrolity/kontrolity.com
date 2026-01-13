@@ -45,14 +45,14 @@ export default function ROI() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">
                 Kontrolity ROI —{' '}
                 <span className="bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent">
                   Turn Infrastructure Incidents Into Savings
                 </span>
               </h1>
 
-              <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto text-slate-400">
+              <p className="text-lg sm:text-xl md:text-2xl mb-8 max-w-4xl mx-auto text-slate-400">
                 Every hour of downtime costs ~$2M. Kontrolity reduces incident resolution by 80%, turning costly outages into fast recoveries.
               </p>
 
@@ -87,7 +87,7 @@ export default function ROI() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-white">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-center text-white">
                 The Cost of{' '}
                 <span className="bg-gradient-to-r from-red-400 to-orange-400 bg-clip-text text-transparent">
                   Doing Nothing
@@ -156,46 +156,50 @@ export default function ROI() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-center">
                 <span className="bg-gradient-to-r from-cyan-400 to-teal-400 bg-clip-text text-transparent">
                   Before vs After
                 </span>
               </h2>
 
-              <div className="overflow-x-auto">
-                <table className="w-full border-collapse">
+              <p className="text-sm text-slate-400 mb-4 md:hidden text-center">
+                Scroll horizontally to see all details →
+              </p>
+
+              <div className="overflow-x-auto -mx-4 sm:mx-0 px-4 sm:px-0">
+                <table className="w-full border-collapse min-w-[640px]">
                   <thead>
                     <tr className="border-b border-white/10">
-                      <th className="text-left p-4 text-slate-400 font-semibold">Metric</th>
-                      <th className="text-center p-4 text-red-400 font-semibold">Before Kontrolity</th>
-                      <th className="text-center p-4 text-emerald-400 font-semibold">After Kontrolity</th>
+                      <th className="text-left py-4 px-4 text-slate-400 font-semibold text-sm">Metric</th>
+                      <th className="text-center py-4 px-4 text-red-400 font-semibold text-sm">Before Kontrolity</th>
+                      <th className="text-center py-4 px-4 text-emerald-400 font-semibold text-sm">After Kontrolity</th>
                     </tr>
                   </thead>
-                  <tbody>
+                  <tbody className="text-sm">
                     <tr className="border-b border-white/10">
-                      <td className="p-4 text-white">Incident Detection Time</td>
-                      <td className="p-4 text-center text-slate-300">15-30 minutes (manual monitoring)</td>
-                      <td className="p-4 text-center text-emerald-400 font-semibold">&lt; 1 minute (AI detection)</td>
+                      <td className="py-4 px-4 text-white font-medium">Incident Detection Time</td>
+                      <td className="py-4 px-4 text-center text-slate-300">15-30 minutes (manual monitoring)</td>
+                      <td className="py-4 px-4 text-center text-emerald-400 font-semibold">&lt; 1 minute (AI detection)</td>
                     </tr>
                     <tr className="border-b border-white/10">
-                      <td className="p-4 text-white">Root Cause Analysis</td>
-                      <td className="p-4 text-center text-slate-300">2-4 hours (manual correlation)</td>
-                      <td className="p-4 text-center text-emerald-400 font-semibold">5-15 minutes (AI correlation)</td>
+                      <td className="py-4 px-4 text-white font-medium">Root Cause Analysis</td>
+                      <td className="py-4 px-4 text-center text-slate-300">2-4 hours (manual correlation)</td>
+                      <td className="py-4 px-4 text-center text-emerald-400 font-semibold">5-15 minutes (AI correlation)</td>
                     </tr>
                     <tr className="border-b border-white/10">
-                      <td className="p-4 text-white">Engineering Time on Firefighting</td>
-                      <td className="p-4 text-center text-slate-300">33% (industry average)</td>
-                      <td className="p-4 text-center text-emerald-400 font-semibold">10% (70% reduction)</td>
+                      <td className="py-4 px-4 text-white font-medium">Engineering Time on Firefighting</td>
+                      <td className="py-4 px-4 text-center text-slate-300">33% (industry average)</td>
+                      <td className="py-4 px-4 text-center text-emerald-400 font-semibold">10% (70% reduction)</td>
                     </tr>
                     <tr className="border-b border-white/10">
-                      <td className="p-4 text-white">Mean Time To Recovery (MTTR)</td>
-                      <td className="p-4 text-center text-slate-300">3-6 hours</td>
-                      <td className="p-4 text-center text-emerald-400 font-semibold">30-60 minutes (80% faster)</td>
+                      <td className="py-4 px-4 text-white font-medium">Mean Time To Recovery (MTTR)</td>
+                      <td className="py-4 px-4 text-center text-slate-300">3-6 hours</td>
+                      <td className="py-4 px-4 text-center text-emerald-400 font-semibold">30-60 minutes (80% faster)</td>
                     </tr>
                     <tr>
-                      <td className="p-4 text-white font-bold">Annual Downtime Cost Impact</td>
-                      <td className="p-4 text-center text-red-400 font-bold">$4M-$12M</td>
-                      <td className="p-4 text-center text-emerald-400 font-bold">$800K-$2.4M (80% savings)</td>
+                      <td className="py-4 px-4 text-white font-bold">Annual Downtime Cost Impact</td>
+                      <td className="py-4 px-4 text-center text-red-400 font-bold">$4M-$12M</td>
+                      <td className="py-4 px-4 text-center text-emerald-400 font-bold">$800K-$2.4M (80% savings)</td>
                     </tr>
                   </tbody>
                 </table>
@@ -213,7 +217,7 @@ export default function ROI() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-center">
                 <span className="bg-gradient-to-r from-cyan-400 to-teal-400 bg-clip-text text-transparent">
                   Calculate Your Savings
                 </span>
@@ -335,7 +339,7 @@ export default function ROI() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-center">
                 <span className="bg-gradient-to-r from-cyan-400 to-teal-400 bg-clip-text text-transparent">
                   Why Investors Should Care
                 </span>
@@ -447,7 +451,7 @@ export default function ROI() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-white">
                 Ready to Reduce Your MTTR?
               </h2>
               <p className="text-xl text-slate-400 mb-8 max-w-2xl mx-auto">
