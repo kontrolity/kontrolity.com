@@ -1,0 +1,7 @@
+# robots.txt for kontrolity.com
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://kontrolity.com/sitemap.xml
