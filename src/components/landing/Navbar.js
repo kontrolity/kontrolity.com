@@ -39,6 +39,7 @@ export default function Navbar() {
     },
     Resources: {
       items: [
+        { icon: Sparkles, title: 'About Us', desc: 'Learn about our mission and values', href: '/about' },
         { icon: Sparkles, title: 'Documentation', desc: 'Guides and API references', href: '#docs' },
         { icon: Activity, title: 'Blog', desc: 'Latest updates and insights', href: '#blog' },
         { icon: GitBranch, title: 'Community', desc: 'Join our developer community', href: '#community' },
