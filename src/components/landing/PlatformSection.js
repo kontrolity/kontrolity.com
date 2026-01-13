@@ -40,7 +40,7 @@ export default function PlatformSection() {
   ];
 
   return (
-    <section ref={ref} className="relative py-32 px-6 lg:px-8 bg-slate-950">
+    <section id="platform" ref={ref} className="relative py-32 px-6 lg:px-8 bg-slate-950">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div
