@@ -17,33 +17,33 @@ export default function Navbar() {
   const menuItems = {
     Platform: {
       items: [
-        { icon: Sparkles, title: 'AI Control Layer', desc: 'Autonomous intelligence for infrastructure', href: '#platform' },
-        { icon: Database, title: 'Context Engine', desc: 'Multi-source data correlation', href: '#platform' },
-        { icon: Activity, title: 'Real-Time Monitoring', desc: 'Continuous observability', href: '#platform' },
-        { icon: GitBranch, title: 'Dependency Mapping', desc: 'Service relationship graphs', href: '#platform' },
+        { icon: Sparkles, title: 'AI Control Layer', desc: 'Autonomous intelligence for infrastructure', href: '/platform/ai-control-layer' },
+        { icon: Database, title: 'Context Engine', desc: 'Multi-source data correlation', href: '/platform/context-engine' },
+        { icon: Activity, title: 'Real-Time Monitoring', desc: 'Continuous observability', href: '/platform/real-time-monitoring' },
+        { icon: GitBranch, title: 'Dependency Mapping', desc: 'Service relationship graphs', href: '/platform/dependency-mapping' },
       ]
     },
     Products: {
       items: [
         { icon: Shield, title: 'KubeGraf', desc: 'Kubernetes incident intelligence', href: 'https://kubegraf.io', external: true },
-        { icon: Shield, title: 'Security', desc: 'Autonomous penetration testing', href: '#products' },
-        { icon: Zap, title: 'Intelligence', desc: 'Unified AI control layer', href: '#products' },
+        { icon: Shield, title: 'Security', desc: 'Autonomous penetration testing', href: '/products/security' },
+        { icon: Zap, title: 'Intelligence', desc: 'Unified AI control layer', href: '/products/intelligence' },
       ]
     },
     Solutions: {
       items: [
-        { icon: Database, title: 'Cloud Native', desc: 'Kubernetes and container orchestration', href: '#solutions' },
-        { icon: Shield, title: 'Enterprise', desc: 'Large-scale infrastructure management', href: '#solutions' },
-        { icon: Activity, title: 'DevOps', desc: 'CI/CD and deployment automation', href: '#solutions' },
+        { icon: Database, title: 'Cloud Native', desc: 'Kubernetes and container orchestration', href: '/solutions/cloud-native' },
+        { icon: Shield, title: 'Enterprise', desc: 'Large-scale infrastructure management', href: '/solutions/enterprise' },
+        { icon: Activity, title: 'DevOps', desc: 'CI/CD and deployment automation', href: '/solutions/devops' },
       ]
     },
     Resources: {
       items: [
         { icon: Sparkles, title: 'About Us', desc: 'Learn about our mission and values', href: '/about' },
         { icon: BarChart3, title: 'ROI & Business Impact', desc: 'Cost savings and business value', href: '/roi' },
-        { icon: Sparkles, title: 'Documentation', desc: 'Guides and API references', href: '#docs' },
-        { icon: Activity, title: 'Blog', desc: 'Latest updates and insights', href: '#blog' },
-        { icon: GitBranch, title: 'Community', desc: 'Join our developer community', href: '#community' },
+        { icon: Sparkles, title: 'Documentation', desc: 'Guides and API references', href: '/documentation' },
+        { icon: Activity, title: 'Blog', desc: 'Latest updates and insights', href: '/blog' },
+        { icon: GitBranch, title: 'Community', desc: 'Join our developer community', href: '/community' },
       ]
     },
   };
@@ -121,7 +121,7 @@ export default function Navbar() {
                 </div>
               ))}
 
-              <a href="#customers" className="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors">
+              <a href="/customers" className="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors">
                 Customers
               </a>
             </div>

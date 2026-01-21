@@ -156,8 +156,31 @@ export default function About() {
         </div>
       </section>
 
-      {/* Team Section */}
+      {/* Location Section */}
       <section className="py-20 px-6 lg:px-8 bg-slate-900/50">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="bg-gradient-to-br from-cyan-500/10 to-teal-500/10 rounded-3xl p-12 border border-cyan-500/20 text-center"
+          >
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <svg className="w-10 h-10 text-cyan-400" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+              </svg>
+              <h3 className="text-3xl font-bold text-white">Based in Scotland</h3>
+            </div>
+            <p className="text-xl text-slate-300 leading-relaxed max-w-2xl mx-auto">
+              Headquartered in Scotland, United Kingdom, we're building world-class AI infrastructure technology from one of Europe's fastest-growing tech hubs.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section className="py-20 px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -169,12 +192,23 @@ export default function About() {
             <p className="text-xl text-slate-400 mb-8 leading-relaxed">
               We're always looking for talented individuals who are passionate about AI, infrastructure, and building the future of autonomous systems.
             </p>
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 px-8 py-4 text-base font-semibold text-slate-900 bg-gradient-to-r from-cyan-400 to-teal-400 hover:from-cyan-300 hover:to-teal-300 rounded-xl transition-all shadow-lg shadow-cyan-500/25"
-            >
-              Get in Touch
-            </a>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="mailto:contact@kontrolity.com"
+                className="inline-flex items-center gap-2 px-8 py-4 text-base font-semibold text-slate-900 bg-gradient-to-r from-cyan-400 to-teal-400 hover:from-cyan-300 hover:to-teal-300 rounded-xl transition-all shadow-lg shadow-cyan-500/25"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                Contact Us
+              </a>
+              <a
+                href="mailto:founders@kontrolity.com"
+                className="inline-flex items-center gap-2 px-8 py-4 text-base font-semibold text-white bg-slate-800 hover:bg-slate-700 rounded-xl transition-all border border-white/10"
+              >
+                Reach Founders
+              </a>
+            </div>
           </motion.div>
         </div>
       </section>
