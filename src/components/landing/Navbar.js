@@ -17,24 +17,24 @@ export default function Navbar() {
   const menuItems = {
     Platform: {
       items: [
-        { icon: Sparkles, title: 'AI Control Layer', desc: 'Autonomous intelligence for infrastructure', href: '/platform' },
-        { icon: Database, title: 'Context Engine', desc: 'Multi-source data correlation', href: '/platform' },
-        { icon: Activity, title: 'Real-Time Monitoring', desc: 'Continuous observability', href: '/platform' },
-        { icon: GitBranch, title: 'Dependency Mapping', desc: 'Service relationship graphs', href: '/platform' },
+        { icon: Sparkles, title: 'AI Control Layer', desc: 'Autonomous intelligence for infrastructure', href: '/platform/ai-control-layer' },
+        { icon: Database, title: 'Context Engine', desc: 'Multi-source data correlation', href: '/platform/context-engine' },
+        { icon: Activity, title: 'Real-Time Monitoring', desc: 'Continuous observability', href: '/platform/real-time-monitoring' },
+        { icon: GitBranch, title: 'Dependency Mapping', desc: 'Service relationship graphs', href: '/platform/dependency-mapping' },
       ]
     },
     Products: {
       items: [
         { icon: Shield, title: 'KubeGraf', desc: 'Kubernetes incident intelligence', href: 'https://kubegraf.io', external: true },
-        { icon: Shield, title: 'Security', desc: 'Autonomous penetration testing', href: '/products' },
-        { icon: Zap, title: 'Intelligence', desc: 'Unified AI control layer', href: '/products' },
+        { icon: Shield, title: 'Security', desc: 'Autonomous penetration testing', href: '/products/security' },
+        { icon: Zap, title: 'Intelligence', desc: 'Unified AI control layer', href: '/products/intelligence' },
       ]
     },
     Solutions: {
       items: [
-        { icon: Database, title: 'Cloud Native', desc: 'Kubernetes and container orchestration', href: '/solutions' },
-        { icon: Shield, title: 'Enterprise', desc: 'Large-scale infrastructure management', href: '/solutions' },
-        { icon: Activity, title: 'DevOps', desc: 'CI/CD and deployment automation', href: '/solutions' },
+        { icon: Database, title: 'Cloud Native', desc: 'Kubernetes and container orchestration', href: '/solutions/cloud-native' },
+        { icon: Shield, title: 'Enterprise', desc: 'Large-scale infrastructure management', href: '/solutions/enterprise' },
+        { icon: Activity, title: 'DevOps', desc: 'CI/CD and deployment automation', href: '/solutions/devops' },
       ]
     },
     Resources: {
