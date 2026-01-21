@@ -24,11 +24,11 @@ export default function CTASection() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
             <a
-              href="mailto:founder@kontrolity.com"
+              href="mailto:founders@kontrolity.com"
               className="group flex items-center gap-3 px-8 py-4 text-lg font-semibold text-slate-900 bg-white hover:bg-slate-100 rounded-xl shadow-lg transition-all"
             >
               <Mail className="w-5 h-5" />
-              founder@kontrolity.com
+              founders@kontrolity.com
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
