@@ -1,47 +1,282 @@
-import React from 'react';
-import { motion, useInView } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { useRef } from 'react';
-import { Database, Brain, Package, Shield, DollarSign, FileCheck, ArrowRight, Layers } from 'lucide-react';
+import {
+  Database,
+  Brain,
+  Package,
+  Shield,
+  DollarSign,
+  FileCheck,
+  ArrowRight,
+  Layers,
+  Activity,
+  Network,
+  Cpu,
+  Eye,
+  Zap,
+  Check
+} from 'lucide-react';
+
+// Interactive Layer Component
+const PlatformLayer = ({ layer, isActive, onClick, index }) => {
+  const colors = {
+    cyan: {
+      gradient: 'from-cyan-500 to-teal-500',
+      bg: 'from-cyan-500/10 to-teal-500/10',
+      border: 'border-cyan-500/30 hover:border-cyan-500/50',
+      text: 'text-cyan-400',
+      glow: 'shadow-cyan-500/20',
+    },
+    purple: {
+      gradient: 'from-purple-500 to-pink-500',
+      bg: 'from-purple-500/10 to-pink-500/10',
+      border: 'border-purple-500/30 hover:border-purple-500/50',
+      text: 'text-purple-400',
+      glow: 'shadow-purple-500/20',
+    },
+    emerald: {
+      gradient: 'from-emerald-500 to-teal-500',
+      bg: 'from-emerald-500/10 to-teal-500/10',
+      border: 'border-emerald-500/30 hover:border-emerald-500/50',
+      text: 'text-emerald-400',
+      glow: 'shadow-emerald-500/20',
+    },
+  };
+
+  const colorSet = colors[layer.color] || colors.cyan;
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: -50 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.2 }}
+      onClick={onClick}
+      className={`relative cursor-pointer group ${isActive ? 'z-10' : 'z-0'}`}
+    >
+      {/* Active Glow */}
+      {isActive && (
+        <motion.div
+          layoutId="activeGlow"
+          className={`absolute -inset-1 bg-gradient-to-r ${colorSet.gradient} rounded-2xl blur-lg opacity-30`}
+        />
+      )}
+
+      <div
+        className={`relative p-6 rounded-2xl bg-gradient-to-br ${colorSet.bg} border ${
+          isActive ? colorSet.border.replace('hover:', '') : colorSet.border
+        } backdrop-blur-xl transition-all duration-300 ${
+          isActive ? `shadow-xl ${colorSet.glow}` : ''
+        }`}
+      >
+        <div className="flex items-center gap-4 mb-4">
+          <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${colorSet.gradient} flex items-center justify-center shadow-lg`}>
+            <layer.icon className="w-7 h-7 text-white" />
+          </div>
+          <div className="flex-1">
+            <div className="flex items-center gap-2">
+              <h3 className="text-xl font-bold text-white">{layer.title}</h3>
+              {isActive && (
+                <motion.span
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  className={`px-2 py-0.5 rounded-full text-xs font-medium ${colorSet.text} bg-white/10`}
+                >
+                  Active
+                </motion.span>
+              )}
+            </div>
+            <p className="text-sm text-slate-400">{layer.subtitle}</p>
+          </div>
+          <ArrowRight className={`w-5 h-5 ${colorSet.text} transition-transform ${isActive ? 'rotate-90' : 'group-hover:translate-x-1'}`} />
+        </div>
+
+        <AnimatePresence>
+          {isActive && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+              className="overflow-hidden"
+            >
+              <div className="pt-4 border-t border-white/10">
+                <p className="text-slate-300 mb-4">{layer.description}</p>
+                <div className="grid grid-cols-2 gap-3">
+                  {layer.features.map((feature, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: i * 0.1 }}
+                      className="flex items-center gap-2 text-sm text-slate-400"
+                    >
+                      <Check className={`w-4 h-4 ${colorSet.text}`} />
+                      {feature}
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </motion.div>
+  );
+};
+
+// Product Card Component
+const ProductCard = ({ product, delay }) => {
+  const statusColors = {
+    live: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30',
+    soon: 'bg-cyan-500/20 text-cyan-400 border-cyan-500/30',
+    roadmap: 'bg-slate-500/20 text-slate-400 border-slate-500/30',
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay }}
+      className="group relative"
+    >
+      {product.status === 'live' && (
+        <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-2xl blur opacity-20 group-hover:opacity-40 transition-opacity" />
+      )}
+
+      <div
+        className={`relative h-full p-6 rounded-2xl border bg-slate-900/50 backdrop-blur-xl transition-all ${
+          product.status === 'live'
+            ? 'border-emerald-500/30 hover:border-emerald-500/50'
+            : 'border-white/10 hover:border-white/20'
+        }`}
+      >
+        <div className="flex items-start justify-between mb-4">
+          <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${
+            product.status === 'live'
+              ? 'bg-gradient-to-br from-emerald-500 to-teal-500'
+              : product.status === 'soon'
+              ? 'bg-gradient-to-br from-cyan-500 to-teal-500'
+              : 'bg-slate-700'
+          }`}>
+            <product.icon className="w-6 h-6 text-white" />
+          </div>
+          <span className={`px-2.5 py-1 rounded-full text-xs font-medium border ${statusColors[product.status]}`}>
+            {product.statusLabel}
+          </span>
+        </div>
+
+        <h4 className="text-xl font-bold text-white mb-2">{product.name}</h4>
+        <p className="text-sm text-slate-400 mb-4">{product.description}</p>
+
+        {product.link && (
+          <a
+            href={product.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm font-medium text-emerald-400 hover:text-emerald-300 transition-colors"
+          >
+            Explore {product.name}
+            <ArrowRight className="w-4 h-4" />
+          </a>
+        )}
+      </div>
+    </motion.div>
+  );
+};
 
 export default function PlatformSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const [activeLayer, setActiveLayer] = useState(1);
+
+  const layers = [
+    {
+      icon: Package,
+      title: 'Layer 3: Products',
+      subtitle: 'Specialized Applications',
+      color: 'cyan',
+      description: 'Purpose-built autonomous systems for specific infrastructure challenges, all powered by the unified AI layer below.',
+      features: [
+        'Incident Intelligence',
+        'Security Automation',
+        'Cost Optimization',
+        'Compliance Monitoring',
+      ],
+    },
+    {
+      icon: Brain,
+      title: 'Layer 2: AI Intelligence',
+      subtitle: 'The Autonomous Brain',
+      color: 'purple',
+      description: 'Advanced machine learning models that reason over infrastructure context, predict failures, and take autonomous action.',
+      features: [
+        'Root Cause Analysis',
+        'Predictive Models',
+        'Natural Language Reasoning',
+        'Continuous Learning',
+      ],
+    },
+    {
+      icon: Database,
+      title: 'Layer 1: Context Engine',
+      subtitle: 'Unified Data Foundation',
+      color: 'emerald',
+      description: 'Real-time ingestion and correlation of all infrastructure signals—logs, metrics, traces, configs, and cloud APIs.',
+      features: [
+        'Multi-Source Ingestion',
+        'Graph Database',
+        'Pattern Recognition',
+        'Unified Context API',
+      ],
+    },
+  ];
 
   const products = [
     {
+      icon: Activity,
       name: 'KubeGraf',
-      status: 'Available Now',
-      statusColor: 'emerald',
-      icon: Package,
-      description: 'Kubernetes incident intelligence. Autonomous root cause analysis and remediation.',
-      link: 'https://kubegraf.io'
+      description: 'Kubernetes incident intelligence. Autonomous root cause analysis and remediation for K8s clusters.',
+      status: 'live',
+      statusLabel: 'Live Now',
+      link: 'https://kubegraf.io',
     },
     {
-      name: 'SecureGraf',
-      status: 'Coming Soon',
-      statusColor: 'cyan',
       icon: Shield,
-      description: 'Autonomous penetration testing and vulnerability detection. Finds security issues before attackers do.'
+      name: 'SecureGraf',
+      description: 'Autonomous penetration testing and vulnerability detection. Find security issues before attackers do.',
+      status: 'soon',
+      statusLabel: 'Coming Soon',
     },
     {
-      name: 'OptiGraf',
-      status: 'Roadmap',
-      statusColor: 'slate',
       icon: DollarSign,
-      description: 'Cost optimization and resource right-sizing. AI that reduces cloud spend without impacting performance.'
+      name: 'OptiGraf',
+      description: 'AI-powered cost optimization and resource right-sizing. Reduce cloud spend without impacting performance.',
+      status: 'roadmap',
+      statusLabel: 'On Roadmap',
     },
     {
-      name: 'ComplianceGraf',
-      status: 'Roadmap',
-      statusColor: 'slate',
       icon: FileCheck,
-      description: 'Autonomous compliance monitoring. Continuous validation against SOC2, HIPAA, PCI-DSS.'
-    }
+      name: 'ComplianceGraf',
+      description: 'Continuous compliance monitoring and automated remediation. SOC2, HIPAA, PCI-DSS compliance on autopilot.',
+      status: 'roadmap',
+      statusLabel: 'On Roadmap',
+    },
   ];
 
   return (
-    <section id="platform" ref={ref} className="relative py-32 px-6 lg:px-8 bg-slate-950">
-      <div className="max-w-7xl mx-auto">
+    <section id="platform" ref={ref} className="relative py-32 bg-slate-950 overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 grid-pattern opacity-20" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent" />
+
+      {/* Animated Background Elements */}
+      <div className="absolute top-1/4 right-0 w-96 h-96 bg-purple-500/10 rounded-full blur-[128px]" />
+      <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-[128px]" />
+
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -49,165 +284,147 @@ export default function PlatformSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-            The Kontrolity Platform
-          </h2>
-          <p className="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed">
-            One AI Control Layer, Multiple Products
-          </p>
-          <p className="text-lg text-slate-500 max-w-3xl mx-auto mt-4">
-            KubeGraf is the beginning. We're building a unified platform where autonomous AI systems manage every layer of your infrastructure.
-          </p>
-        </motion.div>
-
-        {/* Platform Architecture */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="mb-20"
-        >
-          <div className="space-y-6">
-            {/* Layer 3: Products */}
-            <div className="bg-gradient-to-br from-cyan-500/10 to-teal-500/10 rounded-3xl p-8 border border-cyan-500/20">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-400 to-teal-400 flex items-center justify-center">
-                  <Package className="w-6 h-6 text-slate-900" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-white">Layer 3: Products</h3>
-                  <p className="text-sm text-slate-400">Built on the platform</p>
-                </div>
-              </div>
-              <p className="text-slate-300 leading-relaxed">
-                Specialized autonomous systems for incident response, security, cost optimization, and compliance—all powered by the same unified intelligence layer.
-              </p>
-            </div>
-
-            {/* Arrow */}
-            <div className="flex justify-center">
-              <div className="w-1 h-8 bg-gradient-to-b from-cyan-500/50 to-transparent" />
-            </div>
-
-            {/* Layer 2: AI Intelligence */}
-            <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-3xl p-8 border border-purple-500/20">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center">
-                  <Brain className="w-6 h-6 text-slate-900" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-white">Layer 2: AI Intelligence</h3>
-                  <p className="text-sm text-slate-400">The brain</p>
-                </div>
-              </div>
-              <div className="grid md:grid-cols-2 gap-4 text-slate-300">
-                <div className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-purple-400 mt-2" />
-                  <span>Autonomous decision-making engine</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-purple-400 mt-2" />
-                  <span>Root cause analysis and prediction models</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-purple-400 mt-2" />
-                  <span>Natural language reasoning over infrastructure</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-purple-400 mt-2" />
-                  <span>Continuous learning from outcomes</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Arrow */}
-            <div className="flex justify-center">
-              <div className="w-1 h-8 bg-gradient-to-b from-purple-500/50 to-transparent" />
-            </div>
-
-            {/* Layer 1: Context Engine */}
-            <div className="bg-gradient-to-br from-emerald-500/10 to-teal-500/10 rounded-3xl p-8 border border-emerald-500/20">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-400 to-teal-400 flex items-center justify-center">
-                  <Database className="w-6 h-6 text-slate-900" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-white">Layer 1: Context Engine</h3>
-                  <p className="text-sm text-slate-400">Foundation</p>
-                </div>
-              </div>
-              <div className="grid md:grid-cols-2 gap-4 text-slate-300">
-                <div className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-2" />
-                  <span>Multi-source data ingestion (logs, metrics, traces, configs, cloud APIs)</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-2" />
-                  <span>Real-time graph database of infrastructure relationships</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-2" />
-                  <span>Historical pattern recognition and learning</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-2" />
-                  <span>Unified context layer that all products share</span>
-                </div>
-              </div>
-            </div>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 mb-6">
+            <Layers className="w-4 h-4 text-purple-400" />
+            <span className="text-sm font-medium text-purple-400">Platform Architecture</span>
           </div>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+            One Platform.{' '}
+            <span className="gradient-text-purple">Infinite Possibilities.</span>
+          </h2>
+          <p className="text-xl text-slate-400 max-w-3xl mx-auto">
+            A unified AI control layer that powers all our products. Build once, benefit everywhere.
+          </p>
         </motion.div>
+
+        {/* Platform Layers */}
+        <div className="grid lg:grid-cols-2 gap-12 mb-24">
+          {/* Interactive Layers */}
+          <div className="space-y-4">
+            {layers.map((layer, i) => (
+              <PlatformLayer
+                key={i}
+                layer={layer}
+                index={i}
+                isActive={activeLayer === i}
+                onClick={() => setActiveLayer(i)}
+              />
+            ))}
+          </div>
+
+          {/* Visualization */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={isInView ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="relative flex items-center justify-center"
+          >
+            <div className="relative w-full max-w-md aspect-square">
+              {/* Central Core */}
+              <motion.div
+                animate={{
+                  boxShadow: activeLayer === 2
+                    ? '0 0 60px rgba(16, 185, 129, 0.4)'
+                    : activeLayer === 1
+                    ? '0 0 60px rgba(168, 85, 247, 0.4)'
+                    : '0 0 60px rgba(34, 211, 238, 0.4)',
+                }}
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-gradient-to-br from-slate-800 to-slate-900 border border-white/20 flex items-center justify-center z-20"
+              >
+                <Cpu className="w-10 h-10 text-white" />
+              </motion.div>
+
+              {/* Orbiting Rings */}
+              {[1, 2, 3].map((ring) => (
+                <motion.div
+                  key={ring}
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border"
+                  style={{
+                    width: `${ring * 100 + 50}px`,
+                    height: `${ring * 100 + 50}px`,
+                    borderColor: activeLayer === 3 - ring ? 'rgba(255,255,255,0.3)' : 'rgba(255,255,255,0.1)',
+                  }}
+                  animate={{
+                    rotate: ring % 2 === 0 ? 360 : -360,
+                  }}
+                  transition={{
+                    duration: 20 + ring * 10,
+                    repeat: Infinity,
+                    ease: 'linear',
+                  }}
+                >
+                  {/* Orbiting Nodes */}
+                  <motion.div
+                    className={`absolute w-4 h-4 rounded-full ${
+                      ring === 1 ? 'bg-emerald-400' : ring === 2 ? 'bg-purple-400' : 'bg-cyan-400'
+                    }`}
+                    style={{
+                      top: '50%',
+                      left: 0,
+                      transform: 'translate(-50%, -50%)',
+                    }}
+                    animate={{
+                      scale: activeLayer === 3 - ring ? [1, 1.2, 1] : 1,
+                    }}
+                    transition={{ duration: 1, repeat: Infinity }}
+                  />
+                </motion.div>
+              ))}
+
+              {/* Data Flow Lines */}
+              {[0, 45, 90, 135, 180, 225, 270, 315].map((angle) => (
+                <motion.div
+                  key={angle}
+                  className="absolute top-1/2 left-1/2 w-1 bg-gradient-to-t from-cyan-500/50 to-transparent"
+                  style={{
+                    height: '150px',
+                    transformOrigin: 'top',
+                    transform: `rotate(${angle}deg)`,
+                  }}
+                  animate={{
+                    opacity: [0.2, 0.5, 0.2],
+                  }}
+                  transition={{
+                    duration: 2,
+                    delay: angle / 360,
+                    repeat: Infinity,
+                  }}
+                />
+              ))}
+
+              {/* Corner Labels */}
+              <div className="absolute top-0 left-0 flex items-center gap-2 text-xs text-slate-400">
+                <Eye className="w-4 h-4" /> Observe
+              </div>
+              <div className="absolute top-0 right-0 flex items-center gap-2 text-xs text-slate-400">
+                Understand <Brain className="w-4 h-4" />
+              </div>
+              <div className="absolute bottom-0 left-0 flex items-center gap-2 text-xs text-slate-400">
+                <Network className="w-4 h-4" /> Connect
+              </div>
+              <div className="absolute bottom-0 right-0 flex items-center gap-2 text-xs text-slate-400">
+                Act <Zap className="w-4 h-4" />
+              </div>
+            </div>
+          </motion.div>
+        </div>
 
         {/* Products Grid */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, delay: 0.4 }}
+          transition={{ duration: 0.7, delay: 0.6 }}
         >
-          <h3 className="text-3xl font-bold text-white mb-10 text-center">
+          <h3 className="text-3xl font-bold text-white mb-4 text-center">
             Products Built on the Platform
           </h3>
-          <div className="grid md:grid-cols-2 gap-6">
-            {products.map((product, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-                className={`rounded-2xl p-8 border transition-all ${
-                  product.link
-                    ? 'bg-gradient-to-br from-cyan-500/10 to-teal-500/10 border-cyan-500/30 hover:border-cyan-500/50 cursor-pointer'
-                    : 'bg-slate-800/50 border-white/10 hover:border-white/20'
-                }`}
-                onClick={() => product.link && window.open(product.link, '_blank')}
-              >
-                <div className="flex items-start justify-between mb-6">
-                  <div className="flex items-center gap-4">
-                    <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${
-                      product.statusColor === 'emerald' ? 'from-emerald-400 to-teal-400' :
-                      product.statusColor === 'cyan' ? 'from-cyan-400 to-teal-400' :
-                      'from-slate-500 to-slate-600'
-                    } flex items-center justify-center`}>
-                      <product.icon className="w-7 h-7 text-slate-900" />
-                    </div>
-                    <div>
-                      <h4 className="text-2xl font-bold text-white mb-1">{product.name}</h4>
-                      <div className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold ${
-                        product.statusColor === 'emerald' ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' :
-                        product.statusColor === 'cyan' ? 'bg-cyan-500/20 text-cyan-400 border border-cyan-500/30' :
-                        'bg-slate-500/20 text-slate-400 border border-slate-500/30'
-                      }`}>
-                        {product.statusColor === 'emerald' && <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />}
-                        {product.status}
-                      </div>
-                    </div>
-                  </div>
-                  {product.link && (
-                    <ArrowRight className="w-5 h-5 text-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  )}
-                </div>
-                <p className="text-slate-400 leading-relaxed">{product.description}</p>
-              </motion.div>
+          <p className="text-slate-400 text-center mb-10 max-w-2xl mx-auto">
+            Each product inherits the full power of our AI intelligence layer, enabling autonomous operations across your entire stack.
+          </p>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {products.map((product, i) => (
+              <ProductCard key={i} product={product} delay={0.7 + i * 0.1} />
             ))}
           </div>
         </motion.div>
