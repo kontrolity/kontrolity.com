@@ -36,8 +36,8 @@ export default function ROI() {
         <section className="py-16 px-6 lg:px-8 relative overflow-hidden">
           {/* Animated background */}
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:64px_64px] opacity-20" />
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-[128px]" />
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-teal-500/10 rounded-full blur-[128px]" />
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-violet-500/10 rounded-full blur-[128px]" />
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-[128px]" />
 
           <div className="max-w-5xl mx-auto text-center relative z-10">
             <motion.div
@@ -47,7 +47,7 @@ export default function ROI() {
             >
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">
                 Kontrolity ROI —{' '}
-                <span className="bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-violet-400 via-purple-400 to-purple-400 bg-clip-text text-transparent">
                   Turn Infrastructure Incidents Into Savings
                 </span>
               </h1>
@@ -59,9 +59,9 @@ export default function ROI() {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a
                   href="#calculator"
-                  className="group relative px-8 py-4 text-base font-semibold text-slate-900 rounded-2xl overflow-hidden shadow-2xl shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all"
+                  className="group relative px-8 py-4 text-base font-semibold text-slate-900 rounded-2xl overflow-hidden shadow-2xl shadow-violet-500/25 hover:shadow-violet-500/40 transition-all"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-teal-400 group-hover:from-cyan-300 group-hover:to-teal-300 transition-all" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-violet-400 to-purple-400 group-hover:from-violet-300 group-hover:to-purple-300 transition-all" />
                   <span className="relative flex items-center gap-2">
                     <Calculator className="w-5 h-5" />
                     Calculate Your Savings
@@ -107,7 +107,7 @@ export default function ROI() {
                     href="https://newrelic.com/resources/report/observability-forecast/2025"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs text-cyan-400 hover:text-cyan-300 mt-2 inline-flex items-center gap-1"
+                    className="text-xs text-violet-400 hover:text-violet-300 mt-2 inline-flex items-center gap-1"
                   >
                     New Relic 2025 Observability Forecast
                     <ExternalLink className="w-3 h-3" />
@@ -126,7 +126,7 @@ export default function ROI() {
                     href="https://newrelic.com/resources/report/observability-forecast/2025"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs text-cyan-400 hover:text-cyan-300 mt-2 inline-flex items-center gap-1"
+                    className="text-xs text-violet-400 hover:text-violet-300 mt-2 inline-flex items-center gap-1"
                   >
                     New Relic 2025 Observability Forecast
                     <ExternalLink className="w-3 h-3" />
@@ -157,7 +157,7 @@ export default function ROI() {
               viewport={{ once: true }}
             >
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-center">
-                <span className="bg-gradient-to-r from-cyan-400 to-teal-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent">
                   Before vs After
                 </span>
               </h2>
@@ -218,7 +218,7 @@ export default function ROI() {
               viewport={{ once: true }}
             >
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-center">
-                <span className="bg-gradient-to-r from-cyan-400 to-teal-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent">
                   Calculate Your Savings
                 </span>
               </h2>
@@ -242,7 +242,7 @@ export default function ROI() {
                     />
                     <div className="flex justify-between text-sm text-slate-400 mt-1">
                       <span>1 hour</span>
-                      <span className="font-bold text-cyan-400">{downtime} hours</span>
+                      <span className="font-bold text-violet-400">{downtime} hours</span>
                       <span>20 hours</span>
                     </div>
                   </div>
@@ -262,7 +262,7 @@ export default function ROI() {
                     />
                     <div className="flex justify-between text-sm text-slate-400 mt-1">
                       <span>5 engineers</span>
-                      <span className="font-bold text-cyan-400">{engineers} engineers</span>
+                      <span className="font-bold text-violet-400">{engineers} engineers</span>
                       <span>100 engineers</span>
                     </div>
                   </div>
@@ -282,7 +282,7 @@ export default function ROI() {
                     />
                     <div className="flex justify-between text-sm text-slate-400 mt-1">
                       <span>5/month</span>
-                      <span className="font-bold text-cyan-400">{incidents}/month</span>
+                      <span className="font-bold text-violet-400">{incidents}/month</span>
                       <span>100/month</span>
                     </div>
                   </div>
@@ -311,7 +311,7 @@ export default function ROI() {
                     </div>
                   </div>
 
-                  <div className="bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-xl p-6 border border-emerald-500/30">
+                  <div className="bg-gradient-to-r from-emerald-500/20 to-purple-500/20 rounded-xl p-6 border border-emerald-500/30">
                     <div className="flex items-center justify-between">
                       <div>
                         <div className="text-sm text-slate-300 mb-1">Annual Savings</div>
@@ -319,7 +319,7 @@ export default function ROI() {
                           ${(savings / 1000000).toFixed(1)}M
                         </div>
                       </div>
-                      <div className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-400 to-teal-400 flex items-center justify-center">
+                      <div className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-400 to-purple-400 flex items-center justify-center">
                         <TrendingDown className="w-8 h-8 text-slate-900" />
                       </div>
                     </div>
@@ -340,7 +340,7 @@ export default function ROI() {
               viewport={{ once: true }}
             >
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-center">
-                <span className="bg-gradient-to-r from-cyan-400 to-teal-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent">
                   Why Investors Should Care
                 </span>
               </h2>
@@ -348,22 +348,22 @@ export default function ROI() {
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-slate-800/50 rounded-2xl p-6 border border-white/10">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500/20 to-teal-500/20 border border-cyan-500/20 flex items-center justify-center">
-                      <BarChart3 className="w-6 h-6 text-cyan-400" />
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-500/20 to-purple-500/20 border border-violet-500/20 flex items-center justify-center">
+                      <BarChart3 className="w-6 h-6 text-violet-400" />
                     </div>
                     <h3 className="text-xl font-bold text-white">Massive Market</h3>
                   </div>
                   <ul className="space-y-2 text-sm text-slate-400">
                     <li className="flex items-start gap-2">
-                      <span className="text-cyan-400">•</span>
+                      <span className="text-violet-400">•</span>
                       <span>$7.3B+ cloud infrastructure management market</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-cyan-400">•</span>
+                      <span className="text-violet-400">•</span>
                       <span>7M+ developers deploying to Kubernetes</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-cyan-400">•</span>
+                      <span className="text-violet-400">•</span>
                       <span>96% of organizations using or evaluating Kubernetes</span>
                     </li>
                   </ul>
@@ -463,9 +463,9 @@ export default function ROI() {
                   href="https://kubegraf.io/docs/installation.html"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative px-8 py-4 text-base font-semibold text-slate-900 rounded-2xl overflow-hidden shadow-2xl shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all"
+                  className="group relative px-8 py-4 text-base font-semibold text-slate-900 rounded-2xl overflow-hidden shadow-2xl shadow-violet-500/25 hover:shadow-violet-500/40 transition-all"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-teal-400 group-hover:from-cyan-300 group-hover:to-teal-300 transition-all" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-violet-400 to-purple-400 group-hover:from-violet-300 group-hover:to-purple-300 transition-all" />
                   <span className="relative flex items-center gap-2">
                     Try KubeGraf Free
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

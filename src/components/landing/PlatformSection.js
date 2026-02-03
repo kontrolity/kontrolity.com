@@ -21,30 +21,27 @@ import {
 // Interactive Layer Component
 const PlatformLayer = ({ layer, isActive, onClick, index }) => {
   const colors = {
-    cyan: {
-      gradient: 'from-cyan-500 to-teal-500',
-      bg: 'from-cyan-500/10 to-teal-500/10',
-      border: 'border-cyan-500/30 hover:border-cyan-500/50',
-      text: 'text-cyan-400',
-      glow: 'shadow-cyan-500/20',
+    blue: {
+      gradient: 'from-violet-600 to-violet-700',
+      bg: 'from-violet-900/15 to-violet-800/10',
+      border: 'border-violet-700/25 hover:border-violet-600/35',
+      text: 'text-violet-400/80',
     },
     purple: {
-      gradient: 'from-purple-500 to-pink-500',
-      bg: 'from-purple-500/10 to-pink-500/10',
-      border: 'border-purple-500/30 hover:border-purple-500/50',
-      text: 'text-purple-400',
-      glow: 'shadow-purple-500/20',
+      gradient: 'from-purple-600 to-purple-700',
+      bg: 'from-purple-900/15 to-purple-800/10',
+      border: 'border-purple-700/25 hover:border-purple-600/35',
+      text: 'text-purple-400/80',
     },
     emerald: {
-      gradient: 'from-emerald-500 to-teal-500',
-      bg: 'from-emerald-500/10 to-teal-500/10',
-      border: 'border-emerald-500/30 hover:border-emerald-500/50',
-      text: 'text-emerald-400',
-      glow: 'shadow-emerald-500/20',
+      gradient: 'from-emerald-600 to-emerald-700',
+      bg: 'from-emerald-900/15 to-emerald-800/10',
+      border: 'border-emerald-700/25 hover:border-emerald-600/35',
+      text: 'text-emerald-400/80',
     },
   };
 
-  const colorSet = colors[layer.color] || colors.cyan;
+  const colorSet = colors[layer.color] || colors.blue;
 
   return (
     <motion.div
@@ -55,20 +52,18 @@ const PlatformLayer = ({ layer, isActive, onClick, index }) => {
       onClick={onClick}
       className={`relative cursor-pointer group ${isActive ? 'z-10' : 'z-0'}`}
     >
-      {/* Active Glow */}
+      {/* Active Indicator */}
       {isActive && (
         <motion.div
           layoutId="activeGlow"
-          className={`absolute -inset-1 bg-gradient-to-r ${colorSet.gradient} rounded-2xl blur-lg opacity-30`}
+          className={`absolute -inset-0.5 bg-gradient-to-r ${colorSet.gradient} rounded-2xl opacity-10`}
         />
       )}
 
       <div
         className={`relative p-6 rounded-2xl bg-gradient-to-br ${colorSet.bg} border ${
           isActive ? colorSet.border.replace('hover:', '') : colorSet.border
-        } backdrop-blur-xl transition-all duration-300 ${
-          isActive ? `shadow-xl ${colorSet.glow}` : ''
-        }`}
+        } backdrop-blur-xl transition-all duration-300`}
       >
         <div className="flex items-center gap-4 mb-4">
           <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${colorSet.gradient} flex items-center justify-center shadow-lg`}>
@@ -130,7 +125,7 @@ const PlatformLayer = ({ layer, isActive, onClick, index }) => {
 const ProductCard = ({ product, delay }) => {
   const statusColors = {
     live: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30',
-    soon: 'bg-cyan-500/20 text-cyan-400 border-cyan-500/30',
+    soon: 'bg-violet-500/20 text-violet-400 border-violet-500/30',
     roadmap: 'bg-slate-500/20 text-slate-400 border-slate-500/30',
   };
 
@@ -143,7 +138,7 @@ const ProductCard = ({ product, delay }) => {
       className="group relative"
     >
       {product.status === 'live' && (
-        <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-2xl blur opacity-20 group-hover:opacity-40 transition-opacity" />
+        <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-500 to-purple-500 rounded-2xl blur opacity-20 group-hover:opacity-40 transition-opacity" />
       )}
 
       <div
@@ -156,9 +151,9 @@ const ProductCard = ({ product, delay }) => {
         <div className="flex items-start justify-between mb-4">
           <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${
             product.status === 'live'
-              ? 'bg-gradient-to-br from-emerald-500 to-teal-500'
+              ? 'bg-gradient-to-br from-emerald-500 to-purple-500'
               : product.status === 'soon'
-              ? 'bg-gradient-to-br from-cyan-500 to-teal-500'
+              ? 'bg-gradient-to-br from-violet-500 to-purple-500'
               : 'bg-slate-700'
           }`}>
             <product.icon className="w-6 h-6 text-white" />
@@ -197,7 +192,7 @@ export default function PlatformSection() {
       icon: Package,
       title: 'Layer 3: Products',
       subtitle: 'Specialized Applications',
-      color: 'cyan',
+      color: 'blue',
       description: 'Purpose-built autonomous systems for specific infrastructure challenges, all powered by the unified AI layer below.',
       features: [
         'Incident Intelligence',
@@ -267,14 +262,9 @@ export default function PlatformSection() {
   ];
 
   return (
-    <section id="platform" ref={ref} className="relative py-32 bg-slate-950 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 grid-pattern opacity-20" />
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent" />
-
-      {/* Animated Background Elements */}
-      <div className="absolute top-1/4 right-0 w-96 h-96 bg-purple-500/10 rounded-full blur-[128px]" />
-      <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-[128px]" />
+    <section id="platform" ref={ref} className="relative py-32 bg-[#0a0a14] overflow-hidden">
+      {/* Clean divider */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
@@ -284,7 +274,7 @@ export default function PlatformSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6">
             <Layers className="w-4 h-4 text-purple-400" />
             <span className="text-sm font-medium text-purple-400">Platform Architecture</span>
           </div>
@@ -292,7 +282,7 @@ export default function PlatformSection() {
             One Platform.{' '}
             <span className="gradient-text-purple">Infinite Possibilities.</span>
           </h2>
-          <p className="text-xl text-slate-400 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
             A unified AI control layer that powers all our products. Build once, benefit everywhere.
           </p>
         </motion.div>
@@ -327,7 +317,7 @@ export default function PlatformSection() {
                     ? '0 0 60px rgba(16, 185, 129, 0.4)'
                     : activeLayer === 1
                     ? '0 0 60px rgba(168, 85, 247, 0.4)'
-                    : '0 0 60px rgba(34, 211, 238, 0.4)',
+                    : '0 0 60px rgba(139, 92, 246, 0.4)',
                 }}
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-gradient-to-br from-slate-800 to-slate-900 border border-white/20 flex items-center justify-center z-20"
               >
@@ -356,7 +346,7 @@ export default function PlatformSection() {
                   {/* Orbiting Nodes */}
                   <motion.div
                     className={`absolute w-4 h-4 rounded-full ${
-                      ring === 1 ? 'bg-emerald-400' : ring === 2 ? 'bg-purple-400' : 'bg-cyan-400'
+                      ring === 1 ? 'bg-emerald-400' : ring === 2 ? 'bg-purple-400' : 'bg-violet-400'
                     }`}
                     style={{
                       top: '50%',
@@ -375,7 +365,7 @@ export default function PlatformSection() {
               {[0, 45, 90, 135, 180, 225, 270, 315].map((angle) => (
                 <motion.div
                   key={angle}
-                  className="absolute top-1/2 left-1/2 w-1 bg-gradient-to-t from-cyan-500/50 to-transparent"
+                  className="absolute top-1/2 left-1/2 w-1 bg-gradient-to-t from-violet-500/50 to-transparent"
                   style={{
                     height: '150px',
                     transformOrigin: 'top',

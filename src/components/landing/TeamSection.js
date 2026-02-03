@@ -21,16 +21,16 @@ const TeamMember = ({ member, delay }) => (
     transition={{ delay }}
     className="group relative"
   >
-    <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-purple-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
+    <div className="absolute inset-0 bg-gradient-to-br from-violet-500/20 to-purple-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
 
-    <div className="relative p-6 rounded-2xl border border-white/10 bg-slate-900/50 backdrop-blur-xl hover:border-cyan-500/30 transition-all">
+    <div className="relative p-6 rounded-2xl border border-white/10 bg-slate-900/50 backdrop-blur-xl hover:border-violet-500/30 transition-all">
       {/* Avatar */}
-      <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-cyan-500 to-teal-500 flex items-center justify-center text-2xl font-bold text-white mb-4">
+      <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-violet-500 to-purple-500 flex items-center justify-center text-2xl font-bold text-white mb-4">
         {member.initials}
       </div>
 
       <h3 className="text-xl font-bold text-white mb-1">{member.name}</h3>
-      <p className="text-cyan-400 font-medium mb-2">{member.role}</p>
+      <p className="text-violet-400 font-medium mb-2">{member.role}</p>
       <p className="text-sm text-slate-400 mb-4">{member.bio}</p>
 
       {/* Previous Companies */}
@@ -45,12 +45,12 @@ const TeamMember = ({ member, delay }) => (
       {/* Social Links */}
       <div className="flex items-center gap-3">
         {member.linkedin && (
-          <a href={member.linkedin} className="text-slate-400 hover:text-cyan-400 transition-colors">
+          <a href={member.linkedin} className="text-slate-400 hover:text-violet-400 transition-colors">
             <Linkedin className="w-5 h-5" />
           </a>
         )}
         {member.twitter && (
-          <a href={member.twitter} className="text-slate-400 hover:text-cyan-400 transition-colors">
+          <a href={member.twitter} className="text-slate-400 hover:text-violet-400 transition-colors">
             <Twitter className="w-5 h-5" />
           </a>
         )}
@@ -158,7 +158,7 @@ export default function TeamSection() {
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent" />
 
       <div className="absolute top-1/4 left-0 w-96 h-96 bg-purple-500/10 rounded-full blur-[128px]" />
-      <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-[128px]" />
+      <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-violet-500/10 rounded-full blur-[128px]" />
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
@@ -168,7 +168,7 @@ export default function TeamSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6">
             <Users className="w-4 h-4 text-purple-400" />
             <span className="text-sm font-medium text-purple-400">About Us</span>
           </div>
@@ -245,7 +245,7 @@ export default function TeamSection() {
         >
           <div className="p-8 rounded-2xl border border-white/10 bg-slate-900/30 backdrop-blur-xl">
             <div className="flex items-center gap-3 mb-4">
-              <MapPin className="w-6 h-6 text-cyan-400" />
+              <MapPin className="w-6 h-6 text-violet-400" />
               <h4 className="text-xl font-bold text-white">Headquartered in Scotland</h4>
             </div>
             <p className="text-slate-400 mb-4">
@@ -256,14 +256,14 @@ export default function TeamSection() {
             </p>
           </div>
 
-          <div className="p-8 rounded-2xl border border-white/10 bg-gradient-to-br from-cyan-500/10 to-purple-500/10 backdrop-blur-xl">
+          <div className="p-8 rounded-2xl border border-white/10 bg-gradient-to-br from-violet-500/10 to-purple-500/10 backdrop-blur-xl">
             <h4 className="text-xl font-bold text-white mb-4">Join Our Mission</h4>
             <p className="text-slate-400 mb-6">
               We're building the future of infrastructure automation. If you're passionate about AI, infrastructure, and developer experience, we want to hear from you.
             </p>
             <a
               href="/careers"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 text-slate-900 font-semibold hover:from-cyan-400 hover:to-teal-400 transition-all"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-violet-500 to-purple-500 text-slate-900 font-semibold hover:from-violet-400 hover:to-purple-400 transition-all"
             >
               View Open Positions
               <ArrowRight className="w-4 h-4" />

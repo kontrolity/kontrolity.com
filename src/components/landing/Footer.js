@@ -43,9 +43,9 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative bg-slate-950 border-t border-white/10">
+    <footer className="relative bg-[#060609] border-t border-white/5">
       {/* Gradient Line */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-violet-500/50 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Newsletter Section */}
@@ -65,10 +65,10 @@ export default function Footer() {
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="w-full pl-12 pr-4 py-3 rounded-xl bg-slate-900/50 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500/50 transition-colors"
+                  className="w-full pl-12 pr-4 py-3 rounded-xl bg-slate-900/50 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-violet-500/50 transition-colors"
                 />
               </div>
-              <button className="px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 text-slate-900 font-semibold hover:from-cyan-400 hover:to-teal-400 transition-all flex items-center gap-2">
+              <button className="px-6 py-3 rounded-xl bg-gradient-to-r from-violet-500 to-purple-500 text-slate-900 font-semibold hover:from-violet-400 hover:to-purple-400 transition-all flex items-center gap-2">
                 Subscribe
                 <ArrowRight className="w-4 h-4" />
               </button>
@@ -92,7 +92,7 @@ export default function Footer() {
               <div className="space-y-3">
                 <a
                   href="mailto:contact@kontrolity.com"
-                  className="flex items-center gap-2 text-sm text-slate-400 hover:text-cyan-400 transition-colors"
+                  className="flex items-center gap-2 text-sm text-slate-400 hover:text-violet-400 transition-colors"
                 >
                   <Mail className="w-4 h-4" />
                   contact@kontrolity.com
@@ -111,7 +111,7 @@ export default function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-xl bg-slate-900/50 border border-white/10 flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:border-cyan-500/30 transition-all"
+                    className="w-10 h-10 rounded-xl bg-slate-900/50 border border-white/10 flex items-center justify-center text-slate-400 hover:text-violet-400 hover:border-violet-500/30 transition-all"
                     aria-label={social.label}
                   >
                     <social.icon className="w-5 h-5" />

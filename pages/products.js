@@ -72,7 +72,7 @@ export default function Products() {
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-6 lg:px-8 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-cyan-900/20 via-slate-950 to-slate-950" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-violet-900/20 via-slate-950 to-slate-950" />
 
         <div className="relative max-w-5xl mx-auto text-center">
           <motion.div
@@ -82,7 +82,7 @@ export default function Products() {
           >
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
               Our{' '}
-              <span className="bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-violet-400 via-purple-400 to-purple-400 bg-clip-text text-transparent">
                 Products
               </span>
             </h1>
@@ -105,21 +105,21 @@ export default function Products() {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 rounded-3xl p-8 md:p-12 border border-white/10 hover:border-cyan-500/30 transition-all">
+              <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 rounded-3xl p-8 md:p-12 border border-white/10 hover:border-violet-500/30 transition-all">
                 {/* Status Badge */}
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-sm font-medium mb-6">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-400 text-sm font-medium mb-6">
                   {product.status}
                 </div>
 
                 <div className="grid lg:grid-cols-2 gap-12">
                   {/* Left Column - Product Info */}
                   <div>
-                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-teal-500/20 border border-cyan-500/30 mb-6">
-                      <product.icon className="w-8 h-8 text-cyan-400" />
+                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-violet-500/20 to-purple-500/20 border border-violet-500/30 mb-6">
+                      <product.icon className="w-8 h-8 text-violet-400" />
                     </div>
 
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">{product.name}</h2>
-                    <p className="text-xl text-cyan-400 mb-6">{product.tagline}</p>
+                    <p className="text-xl text-violet-400 mb-6">{product.tagline}</p>
                     <p className="text-lg text-slate-400 mb-8 leading-relaxed">
                       {product.description}
                     </p>
@@ -128,7 +128,7 @@ export default function Products() {
                       href={product.href}
                       target={product.external ? '_blank' : undefined}
                       rel={product.external ? 'noopener noreferrer' : undefined}
-                      className="inline-flex items-center gap-2 px-8 py-4 text-base font-semibold text-slate-900 bg-gradient-to-r from-cyan-400 to-teal-400 hover:from-cyan-300 hover:to-teal-300 rounded-xl transition-all shadow-lg shadow-cyan-500/25"
+                      className="inline-flex items-center gap-2 px-8 py-4 text-base font-semibold text-slate-900 bg-gradient-to-r from-violet-400 to-purple-400 hover:from-violet-300 hover:to-purple-300 rounded-xl transition-all shadow-lg shadow-violet-500/25"
                     >
                       {product.external ? 'Visit Site' : 'Learn More'}
                       {product.external ? <ExternalLink className="w-4 h-4" /> : <ArrowRight className="w-4 h-4" />}
@@ -141,7 +141,7 @@ export default function Products() {
                     <ul className="space-y-4">
                       {product.features.map((feature, idx) => (
                         <li key={idx} className="flex items-start gap-3">
-                          <CheckCircle className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
+                          <CheckCircle className="w-5 h-5 text-violet-400 flex-shrink-0 mt-0.5" />
                           <span className="text-slate-300">{feature}</span>
                         </li>
                       ))}
@@ -178,9 +178,9 @@ export default function Products() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
                 viewport={{ once: true }}
-                className="bg-slate-800/50 rounded-2xl p-6 border border-white/10 hover:border-cyan-500/30 transition-all flex flex-col items-center justify-center gap-3"
+                className="bg-slate-800/50 rounded-2xl p-6 border border-white/10 hover:border-violet-500/30 transition-all flex flex-col items-center justify-center gap-3"
               >
-                <integration.icon className="w-8 h-8 text-cyan-400" />
+                <integration.icon className="w-8 h-8 text-violet-400" />
                 <span className="text-sm font-medium text-slate-300">{integration.name}</span>
               </motion.div>
             ))}
@@ -196,7 +196,7 @@ export default function Products() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-br from-cyan-500/10 to-teal-500/10 rounded-3xl p-12 border border-cyan-500/20 text-center"
+            className="bg-gradient-to-br from-violet-500/10 to-purple-500/10 rounded-3xl p-12 border border-violet-500/20 text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Ready to Get Started?
@@ -207,7 +207,7 @@ export default function Products() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-slate-900 bg-gradient-to-r from-cyan-400 to-teal-400 hover:from-cyan-300 hover:to-teal-300 rounded-xl transition-all shadow-lg shadow-cyan-500/25"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-slate-900 bg-gradient-to-r from-violet-400 to-purple-400 hover:from-violet-300 hover:to-purple-300 rounded-xl transition-all shadow-lg shadow-violet-500/25"
               >
                 Contact Sales
                 <ArrowRight className="w-4 h-4" />

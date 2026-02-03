@@ -22,11 +22,11 @@ const UseCaseTab = ({ useCase, isActive, onClick }) => (
     onClick={onClick}
     className={`flex items-center gap-3 px-6 py-4 rounded-xl transition-all ${
       isActive
-        ? 'bg-gradient-to-r from-cyan-500/20 to-teal-500/20 border border-cyan-500/30 text-white'
-        : 'bg-slate-800/50 border border-white/5 text-slate-400 hover:text-white hover:border-white/10'
+        ? 'bg-violet-100 border border-violet-300 text-violet-700'
+        : 'bg-slate-50 border border-slate-200 text-slate-600 hover:text-slate-900 hover:border-slate-300'
     }`}
   >
-    <useCase.icon className={`w-5 h-5 ${isActive ? 'text-cyan-400' : ''}`} />
+    <useCase.icon className={`w-5 h-5 ${isActive ? 'text-violet-600' : ''}`} />
     <span className="font-medium">{useCase.industry}</span>
   </button>
 );
@@ -44,31 +44,31 @@ const CaseStudyContent = ({ useCase }) => (
     <div className="space-y-6">
       <div>
         <div className="flex items-center gap-3 mb-4">
-          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500 to-teal-500 flex items-center justify-center">
+          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-500 to-purple-500 flex items-center justify-center">
             <useCase.icon className="w-6 h-6 text-white" />
           </div>
           <div>
-            <h3 className="text-2xl font-bold text-white">{useCase.title}</h3>
-            <p className="text-slate-400">{useCase.company}</p>
+            <h3 className="text-2xl font-bold text-slate-900">{useCase.title}</h3>
+            <p className="text-slate-500">{useCase.company}</p>
           </div>
         </div>
 
-        <p className="text-slate-300 leading-relaxed mb-6">
+        <p className="text-slate-600 leading-relaxed mb-6">
           {useCase.story}
         </p>
 
         <div className="space-y-3">
-          <h4 className="text-sm font-semibold text-slate-400 uppercase tracking-wider">The Challenge</h4>
-          <p className="text-slate-400">{useCase.challenge}</p>
+          <h4 className="text-sm font-semibold text-slate-500 uppercase tracking-wider">The Challenge</h4>
+          <p className="text-slate-600">{useCase.challenge}</p>
         </div>
       </div>
 
       <div className="space-y-3">
-        <h4 className="text-sm font-semibold text-slate-400 uppercase tracking-wider">The Solution</h4>
+        <h4 className="text-sm font-semibold text-slate-500 uppercase tracking-wider">The Solution</h4>
         <ul className="space-y-2">
           {useCase.solutions.map((solution, i) => (
-            <li key={i} className="flex items-start gap-3 text-slate-300">
-              <CheckCircle2 className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" />
+            <li key={i} className="flex items-start gap-3 text-slate-600">
+              <CheckCircle2 className="w-5 h-5 text-violet-500 flex-shrink-0 mt-0.5" />
               {solution}
             </li>
           ))}
@@ -78,9 +78,9 @@ const CaseStudyContent = ({ useCase }) => (
 
     {/* Right: Results */}
     <div className="space-y-6">
-      <div className="p-6 rounded-2xl border border-white/10 bg-slate-900/50 backdrop-blur-xl">
-        <h4 className="text-lg font-bold text-white mb-6 flex items-center gap-2">
-          <TrendingUp className="w-5 h-5 text-cyan-400" />
+      <div className="p-6 rounded-2xl border border-slate-200 bg-slate-50">
+        <h4 className="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
+          <TrendingUp className="w-5 h-5 text-violet-600" />
           Results After 90 Days
         </h4>
 
@@ -88,36 +88,36 @@ const CaseStudyContent = ({ useCase }) => (
           {useCase.results.map((result, i) => (
             <div
               key={i}
-              className="p-4 rounded-xl bg-gradient-to-br from-white/5 to-transparent border border-white/5"
+              className="p-4 rounded-xl bg-white border border-slate-200"
             >
-              <div className={`text-3xl font-bold ${result.color} mb-1`}>
+              <div className="text-3xl font-bold text-violet-600 mb-1">
                 {result.value}
               </div>
-              <div className="text-sm text-slate-400">{result.label}</div>
+              <div className="text-sm text-slate-500">{result.label}</div>
             </div>
           ))}
         </div>
       </div>
 
       {/* Quote */}
-      <div className="p-6 rounded-2xl border border-cyan-500/20 bg-gradient-to-br from-cyan-500/10 to-teal-500/10">
-        <p className="text-slate-300 italic mb-4">
+      <div className="p-6 rounded-2xl border border-violet-200 bg-violet-50">
+        <p className="text-slate-700 italic mb-4">
           "{useCase.quote}"
         </p>
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-500 to-teal-500 flex items-center justify-center text-white font-bold text-sm">
+          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-violet-500 to-purple-500 flex items-center justify-center text-white font-bold text-sm">
             {useCase.quoteAuthor.split(' ').map(n => n[0]).join('')}
           </div>
           <div>
-            <div className="font-semibold text-white">{useCase.quoteAuthor}</div>
-            <div className="text-sm text-slate-400">{useCase.quoteRole}</div>
+            <div className="font-semibold text-slate-900">{useCase.quoteAuthor}</div>
+            <div className="text-sm text-slate-500">{useCase.quoteRole}</div>
           </div>
         </div>
       </div>
 
       <a
         href="#contact"
-        className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 font-medium transition-colors"
+        className="inline-flex items-center gap-2 text-violet-600 hover:text-violet-700 font-medium transition-colors"
       >
         See how Kontrolity can help your {useCase.industry.toLowerCase()} team
         <ArrowRight className="w-4 h-4" />
@@ -146,10 +146,10 @@ export default function UseCasesSection() {
         'Natural language queries enabled any team member to investigate issues',
       ],
       results: [
-        { value: '94%', label: 'Reduction in MTTR', color: 'text-cyan-400' },
+        { value: '94%', label: 'Reduction in MTTR', color: 'text-violet-400' },
         { value: '$2.1M', label: 'Saved in downtime costs', color: 'text-emerald-400' },
         { value: '89%', label: 'Incidents auto-resolved', color: 'text-purple-400' },
-        { value: '0', label: 'Major outages (Black Friday)', color: 'text-teal-400' },
+        { value: '0', label: 'Major outages (Black Friday)', color: 'text-purple-400' },
       ],
       quote: "Kontrolity transformed our Black Friday. For the first time in 5 years, we had zero major incidents during peak traffic. The AI caught issues before they impacted customers.",
       quoteAuthor: "James Mitchell",
@@ -169,10 +169,10 @@ export default function UseCasesSection() {
         'Role-based access control ensures compliance with security requirements',
       ],
       results: [
-        { value: '99.999%', label: 'Uptime achieved', color: 'text-cyan-400' },
+        { value: '99.999%', label: 'Uptime achieved', color: 'text-violet-400' },
         { value: '30min', label: 'Early warning on failures', color: 'text-emerald-400' },
         { value: '100%', label: 'Compliance maintained', color: 'text-purple-400' },
-        { value: '67%', label: 'Ops cost reduction', color: 'text-teal-400' },
+        { value: '67%', label: 'Ops cost reduction', color: 'text-purple-400' },
       ],
       quote: "The autonomous compliance documentation alone saved us hundreds of hours. Every incident is automatically documented with root cause, actions taken, and prevention measures.",
       quoteAuthor: "Lisa Park",
@@ -192,10 +192,10 @@ export default function UseCasesSection() {
         'Comprehensive audit trails for all AI decisions and actions',
       ],
       results: [
-        { value: '100%', label: 'HIPAA compliance', color: 'text-cyan-400' },
+        { value: '100%', label: 'HIPAA compliance', color: 'text-violet-400' },
         { value: '78%', label: 'Reduction in on-call alerts', color: 'text-emerald-400' },
         { value: '3min', label: 'Avg incident resolution', color: 'text-purple-400' },
-        { value: '$800K', label: 'Annual savings', color: 'text-teal-400' },
+        { value: '$800K', label: 'Annual savings', color: 'text-purple-400' },
       ],
       quote: "In healthcare, every minute of downtime matters. Kontrolity gives us confidence that our systems are being watched 24/7 by an AI that understands our infrastructure better than we do.",
       quoteAuthor: "Dr. Robert Chen",
@@ -215,10 +215,10 @@ export default function UseCasesSection() {
         'Real-time player experience monitoring and proactive optimization',
       ],
       results: [
-        { value: '<50ms', label: 'Average latency', color: 'text-cyan-400' },
+        { value: '<50ms', label: 'Average latency', color: 'text-violet-400' },
         { value: '10M+', label: 'Concurrent players supported', color: 'text-emerald-400' },
         { value: '0', label: 'Launch day outages', color: 'text-purple-400' },
-        { value: '45%', label: 'Infra cost reduction', color: 'text-teal-400' },
+        { value: '45%', label: 'Infra cost reduction', color: 'text-purple-400' },
       ],
       quote: "Our last game launch had zero downtime. The AI predicted traffic patterns and pre-scaled infrastructure. Our players had a flawless experience from minute one.",
       quoteAuthor: "Alex Turner",
@@ -238,10 +238,10 @@ export default function UseCasesSection() {
         'Automated SLA reporting and proactive customer communication',
       ],
       results: [
-        { value: '99.95%', label: 'SLA achievement', color: 'text-cyan-400' },
+        { value: '99.95%', label: 'SLA achievement', color: 'text-violet-400' },
         { value: '82%', label: 'Reduction in support tickets', color: 'text-emerald-400' },
         { value: '5x', label: 'Faster tenant debugging', color: 'text-purple-400' },
-        { value: '$3.2M', label: 'Annual savings', color: 'text-teal-400' },
+        { value: '$3.2M', label: 'Annual savings', color: 'text-purple-400' },
       ],
       quote: "Managing thousands of enterprise tenants used to require a massive ops team. Now our AI handles most issues autonomously, and our customers have never been happier.",
       quoteAuthor: "Sarah Williams",
@@ -250,14 +250,7 @@ export default function UseCasesSection() {
   ];
 
   return (
-    <section ref={ref} className="relative py-32 bg-slate-950 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 grid-pattern opacity-20" />
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent" />
-
-      <div className="absolute top-1/4 left-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-[128px]" />
-      <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-[128px]" />
-
+    <section ref={ref} className="relative py-32 bg-white overflow-hidden">
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -266,15 +259,15 @@ export default function UseCasesSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 mb-6">
-            <Building2 className="w-4 h-4 text-emerald-400" />
-            <span className="text-sm font-medium text-emerald-400">Customer Success</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-50 border border-violet-200 mb-6">
+            <Building2 className="w-4 h-4 text-violet-600" />
+            <span className="text-sm font-medium text-violet-600">Customer Success</span>
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
             Proven Across{' '}
-            <span className="gradient-text">Every Industry</span>
+            <span className="text-violet-600">Every Industry</span>
           </h2>
-          <p className="text-xl text-slate-400 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
             See how leading companies are transforming their infrastructure operations with autonomous AI.
           </p>
         </motion.div>
@@ -301,7 +294,7 @@ export default function UseCasesSection() {
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="p-8 rounded-3xl border border-white/10 bg-slate-900/30 backdrop-blur-xl"
+          className="p-8 rounded-3xl border border-slate-200 bg-white shadow-sm"
         >
           <AnimatePresence mode="wait">
             <CaseStudyContent key={activeCase} useCase={useCases[activeCase]} />

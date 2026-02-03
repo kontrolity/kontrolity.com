@@ -51,11 +51,11 @@ export default function ProductsSection() {
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Products built for{' '}
-            <span className="bg-gradient-to-r from-cyan-400 to-teal-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent">
               autonomous operations
             </span>
           </h2>
-          <p className="text-xl text-slate-400 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
             AI control systems for every layer of your infrastructure
           </p>
         </motion.div>
@@ -72,10 +72,10 @@ export default function ProductsSection() {
                 href={product.href}
                 target={product.href.startsWith('http') ? '_blank' : undefined}
                 rel={product.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                className="group block h-full bg-gradient-to-br from-slate-900/50 to-slate-800/50 hover:from-slate-900/70 hover:to-slate-800/70 rounded-2xl p-8 border-2 border-white/10 hover:border-cyan-500/30 transition-all backdrop-blur-xl"
+                className="group block h-full bg-gradient-to-br from-slate-900/50 to-slate-800/50 hover:from-slate-900/70 hover:to-slate-800/70 rounded-2xl p-8 border-2 border-white/10 hover:border-violet-500/30 transition-all backdrop-blur-xl"
               >
                 <div className="flex items-start justify-between mb-6">
-                  <div className="p-3 rounded-xl bg-gradient-to-br from-cyan-400 to-teal-400 text-slate-900">
+                  <div className="p-3 rounded-xl bg-gradient-to-br from-violet-400 to-purple-400 text-slate-900">
                     <product.icon className="w-6 h-6" />
                   </div>
                   <div className="flex items-center gap-2">
@@ -85,19 +85,19 @@ export default function ProductsSection() {
                 </div>
 
                 <h3 className="text-2xl font-bold text-white mb-2">{product.name}</h3>
-                <p className="text-sm font-medium text-cyan-400 mb-4">{product.tagline}</p>
+                <p className="text-sm font-medium text-violet-400 mb-4">{product.tagline}</p>
                 <p className="text-slate-400 mb-6 leading-relaxed">{product.description}</p>
 
                 <ul className="space-y-2 mb-6">
                   {product.features.map((feature) => (
                     <li key={feature} className="flex items-center gap-2 text-sm text-slate-400">
-                      <div className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-violet-400" />
                       {feature}
                     </li>
                   ))}
                 </ul>
 
-                <div className="flex items-center gap-2 text-cyan-400 font-semibold group-hover:gap-3 transition-all">
+                <div className="flex items-center gap-2 text-violet-400 font-semibold group-hover:gap-3 transition-all">
                   Learn more
                   {product.href.startsWith('http') ? (
                     <ExternalLink className="w-4 h-4" />

@@ -79,7 +79,7 @@ export default function Documentation() {
       icon: FileText,
       title: 'Technical Docs',
       description: 'Comprehensive technical documentation',
-      color: 'from-cyan-500 to-blue-500'
+      color: 'from-violet-500 to-blue-500'
     },
     {
       icon: Video,
@@ -91,7 +91,7 @@ export default function Documentation() {
       icon: MessageCircle,
       title: 'Community Forum',
       description: 'Get help from the community',
-      color: 'from-teal-500 to-emerald-500'
+      color: 'from-purple-500 to-purple-500'
     }
   ];
 
@@ -110,7 +110,7 @@ export default function Documentation() {
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-6 lg:px-8 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-cyan-900/20 via-slate-950 to-slate-950" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-violet-900/20 via-slate-950 to-slate-950" />
 
         <div className="relative max-w-5xl mx-auto text-center">
           <motion.div
@@ -119,7 +119,7 @@ export default function Documentation() {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
-              <span className="bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-violet-400 via-purple-400 to-purple-400 bg-clip-text text-transparent">
                 Documentation
               </span>
             </h1>
@@ -133,7 +133,7 @@ export default function Documentation() {
                 <input
                   type="text"
                   placeholder="Search documentation..."
-                  className="w-full px-6 py-4 bg-slate-800/50 border border-white/10 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500/50 transition-colors"
+                  className="w-full px-6 py-4 bg-slate-800/50 border border-white/10 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-violet-500/50 transition-colors"
                 />
                 <ArrowRight className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500" />
               </div>
@@ -164,7 +164,7 @@ export default function Documentation() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.3, delay: index * 0.05 }}
                 viewport={{ once: true }}
-                className="px-4 py-2 bg-slate-800/50 hover:bg-slate-800 border border-white/10 hover:border-cyan-500/30 rounded-lg text-slate-300 hover:text-white text-sm transition-all"
+                className="px-4 py-2 bg-slate-800/50 hover:bg-slate-800 border border-white/10 hover:border-violet-500/30 rounded-lg text-slate-300 hover:text-white text-sm transition-all"
               >
                 {doc}
               </motion.a>
@@ -197,10 +197,10 @@ export default function Documentation() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-slate-800/50 rounded-2xl p-8 border border-white/10 hover:border-cyan-500/30 transition-all group"
+                className="bg-slate-800/50 rounded-2xl p-8 border border-white/10 hover:border-violet-500/30 transition-all group"
               >
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-500/20 to-teal-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <category.icon className="w-7 h-7 text-cyan-400" />
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-violet-500/20 to-purple-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <category.icon className="w-7 h-7 text-violet-400" />
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-3">{category.title}</h3>
                 <p className="text-slate-400 mb-6">{category.description}</p>
@@ -210,7 +210,7 @@ export default function Documentation() {
                     <li key={idx}>
                       <a
                         href={link.href}
-                        className="flex items-center gap-2 text-slate-300 hover:text-cyan-400 transition-colors"
+                        className="flex items-center gap-2 text-slate-300 hover:text-violet-400 transition-colors"
                       >
                         <ArrowRight className="w-4 h-4 flex-shrink-0" />
                         <span className="text-sm">{link.title}</span>
@@ -249,17 +249,17 @@ export default function Documentation() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="group relative bg-slate-800/50 rounded-2xl p-8 border border-white/10 hover:border-cyan-500/30 transition-all overflow-hidden"
+                className="group relative bg-slate-800/50 rounded-2xl p-8 border border-white/10 hover:border-violet-500/30 transition-all overflow-hidden"
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${resource.color} opacity-0 group-hover:opacity-10 transition-opacity`} />
 
                 <div className="relative">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-500/20 to-teal-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <resource.icon className="w-7 h-7 text-cyan-400" />
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-violet-500/20 to-purple-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <resource.icon className="w-7 h-7 text-violet-400" />
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-3">{resource.title}</h3>
                   <p className="text-slate-400 mb-4">{resource.description}</p>
-                  <div className="flex items-center gap-2 text-cyan-400 font-medium">
+                  <div className="flex items-center gap-2 text-violet-400 font-medium">
                     Explore
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>
@@ -288,25 +288,25 @@ export default function Documentation() {
                 </p>
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-center gap-3">
-                    <div className="w-2 h-2 rounded-full bg-cyan-400" />
+                    <div className="w-2 h-2 rounded-full bg-violet-400" />
                     <span className="text-slate-300">Official SDKs for Python, Node.js, and Go</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <div className="w-2 h-2 rounded-full bg-cyan-400" />
+                    <div className="w-2 h-2 rounded-full bg-violet-400" />
                     <span className="text-slate-300">Command-line interface tools</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <div className="w-2 h-2 rounded-full bg-cyan-400" />
+                    <div className="w-2 h-2 rounded-full bg-violet-400" />
                     <span className="text-slate-300">Sample code and examples</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <div className="w-2 h-2 rounded-full bg-cyan-400" />
+                    <div className="w-2 h-2 rounded-full bg-violet-400" />
                     <span className="text-slate-300">API playground and testing tools</span>
                   </li>
                 </ul>
                 <a
                   href="#"
-                  className="inline-flex items-center gap-2 px-8 py-4 text-base font-semibold text-slate-900 bg-gradient-to-r from-cyan-400 to-teal-400 hover:from-cyan-300 hover:to-teal-300 rounded-xl transition-all shadow-lg shadow-cyan-500/25"
+                  className="inline-flex items-center gap-2 px-8 py-4 text-base font-semibold text-slate-900 bg-gradient-to-r from-violet-400 to-purple-400 hover:from-violet-300 hover:to-purple-300 rounded-xl transition-all shadow-lg shadow-violet-500/25"
                 >
                   View Developer Tools
                   <ArrowRight className="w-4 h-4" />
@@ -338,7 +338,7 @@ kontrolity deploy --cluster prod`}</code>
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-br from-cyan-500/10 to-teal-500/10 rounded-3xl p-12 border border-cyan-500/20 text-center"
+            className="bg-gradient-to-br from-violet-500/10 to-purple-500/10 rounded-3xl p-12 border border-violet-500/20 text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Need Help?
@@ -349,7 +349,7 @@ kontrolity deploy --cluster prod`}</code>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/community"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-slate-900 bg-gradient-to-r from-cyan-400 to-teal-400 hover:from-cyan-300 hover:to-teal-300 rounded-xl transition-all shadow-lg shadow-cyan-500/25"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-slate-900 bg-gradient-to-r from-violet-400 to-purple-400 hover:from-violet-300 hover:to-purple-300 rounded-xl transition-all shadow-lg shadow-violet-500/25"
               >
                 Join Community
                 <ArrowRight className="w-4 h-4" />

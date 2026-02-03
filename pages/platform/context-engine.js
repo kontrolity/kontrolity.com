@@ -66,7 +66,7 @@ export default function ContextEngine() {
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-6 lg:px-8 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-cyan-900/20 via-slate-950 to-slate-950" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-violet-900/20 via-slate-950 to-slate-950" />
 
         <div className="relative max-w-5xl mx-auto text-center">
           <motion.div
@@ -74,12 +74,12 @@ export default function ContextEngine() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-sm font-medium mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-400 text-sm font-medium mb-6">
               <Database className="w-4 h-4" />
               Platform Feature
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
-              <span className="bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-violet-400 via-purple-400 to-purple-400 bg-clip-text text-transparent">
                 Context Engine
               </span>
             </h1>
@@ -89,7 +89,7 @@ export default function ContextEngine() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-slate-900 bg-gradient-to-r from-cyan-400 to-teal-400 hover:from-cyan-300 hover:to-teal-300 rounded-xl transition-all shadow-lg shadow-cyan-500/25"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-slate-900 bg-gradient-to-r from-violet-400 to-purple-400 hover:from-violet-300 hover:to-purple-300 rounded-xl transition-all shadow-lg shadow-violet-500/25"
               >
                 Get Started
                 <ArrowRight className="w-4 h-4" />
@@ -113,7 +113,7 @@ export default function ContextEngine() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-br from-cyan-500/10 to-teal-500/10 rounded-3xl p-12 border border-cyan-500/20"
+            className="bg-gradient-to-br from-violet-500/10 to-purple-500/10 rounded-3xl p-12 border border-violet-500/20"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">What is Context Engine?</h2>
             <p className="text-lg text-slate-300 leading-relaxed mb-6">
@@ -150,10 +150,10 @@ export default function ContextEngine() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-slate-800/50 rounded-2xl p-8 border border-white/10 hover:border-cyan-500/30 transition-all"
+                className="bg-slate-800/50 rounded-2xl p-8 border border-white/10 hover:border-violet-500/30 transition-all"
               >
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-500/20 to-teal-500/20 flex items-center justify-center mb-6">
-                  <feature.icon className="w-7 h-7 text-cyan-400" />
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-violet-500/20 to-purple-500/20 flex items-center justify-center mb-6">
+                  <feature.icon className="w-7 h-7 text-violet-400" />
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-3">{feature.title}</h3>
                 <p className="text-slate-400 leading-relaxed">{feature.description}</p>
@@ -187,9 +187,9 @@ export default function ContextEngine() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
                 viewport={{ once: true }}
-                className="bg-slate-800/50 rounded-xl p-4 border border-white/10 hover:border-cyan-500/30 transition-all text-center"
+                className="bg-slate-800/50 rounded-xl p-4 border border-white/10 hover:border-violet-500/30 transition-all text-center"
               >
-                <Cloud className="w-8 h-8 text-cyan-400 mx-auto mb-2" />
+                <Cloud className="w-8 h-8 text-violet-400 mx-auto mb-2" />
                 <span className="text-sm text-slate-300">{source}</span>
               </motion.div>
             ))}
@@ -223,7 +223,7 @@ export default function ContextEngine() {
                 viewport={{ once: true }}
                 className="bg-slate-800/50 rounded-2xl p-8 border border-white/10"
               >
-                <CheckCircle className="w-8 h-8 text-cyan-400 mb-4" />
+                <CheckCircle className="w-8 h-8 text-violet-400 mb-4" />
                 <h3 className="text-xl font-bold text-white mb-3">{benefit.title}</h3>
                 <p className="text-slate-400 leading-relaxed">{benefit.description}</p>
               </motion.div>
@@ -240,7 +240,7 @@ export default function ContextEngine() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-br from-cyan-500/10 to-teal-500/10 rounded-3xl p-12 border border-cyan-500/20 text-center"
+            className="bg-gradient-to-br from-violet-500/10 to-purple-500/10 rounded-3xl p-12 border border-violet-500/20 text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Unify Your Infrastructure Data
@@ -251,7 +251,7 @@ export default function ContextEngine() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-slate-900 bg-gradient-to-r from-cyan-400 to-teal-400 hover:from-cyan-300 hover:to-teal-300 rounded-xl transition-all shadow-lg shadow-cyan-500/25"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-slate-900 bg-gradient-to-r from-violet-400 to-purple-400 hover:from-violet-300 hover:to-purple-300 rounded-xl transition-all shadow-lg shadow-violet-500/25"
               >
                 Request Demo
                 <ArrowRight className="w-4 h-4" />

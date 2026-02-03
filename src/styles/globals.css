@@ -141,7 +141,7 @@
 
 @keyframes blink-caret {
   from, to { border-color: transparent; }
-  50% { border-color: #22d3ee; }
+  50% { border-color: #8b5cf6; }
 }
 
 @keyframes morph {
@@ -193,7 +193,7 @@
   animation: text-shimmer 2s infinite;
 }
 .animate-border-flow {
-  background: linear-gradient(90deg, #22d3ee, #14b8a6, #22d3ee);
+  background: linear-gradient(90deg, #8b5cf6, #a78bfa, #8b5cf6);
   background-size: 200% 100%;
   animation: border-flow 3s linear infinite;
 }
@@ -217,14 +217,14 @@
 
 /* Gradient Text */
 .gradient-text {
-  background: linear-gradient(135deg, #22d3ee 0%, #14b8a6 50%, #10b981 100%);
+  background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 50%, #7c3aed 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .gradient-text-purple {
-  background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+  background: linear-gradient(135deg, #c4b5fd 0%, #a78bfa 50%, #8b5cf6 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -232,18 +232,28 @@
 
 /* Glow Effects */
 .glow-cyan {
-  box-shadow: 0 0 40px rgba(34, 211, 238, 0.3),
-              0 0 80px rgba(34, 211, 238, 0.1);
+  box-shadow: 0 0 40px rgba(139, 92, 246, 0.3),
+              0 0 80px rgba(139, 92, 246, 0.1);
 }
 
 .glow-teal {
-  box-shadow: 0 0 40px rgba(20, 184, 166, 0.3),
-              0 0 80px rgba(20, 184, 166, 0.1);
+  box-shadow: 0 0 40px rgba(167, 139, 250, 0.3),
+              0 0 80px rgba(167, 139, 250, 0.1);
 }
 
 .glow-purple {
-  box-shadow: 0 0 40px rgba(168, 85, 247, 0.3),
-              0 0 80px rgba(168, 85, 247, 0.1);
+  box-shadow: 0 0 40px rgba(139, 92, 246, 0.3),
+              0 0 80px rgba(139, 92, 246, 0.1);
+}
+
+.glow-blue {
+  box-shadow: 0 0 40px rgba(139, 92, 246, 0.3),
+              0 0 80px rgba(139, 92, 246, 0.1);
+}
+
+.glow-violet {
+  box-shadow: 0 0 40px rgba(139, 92, 246, 0.3),
+              0 0 80px rgba(139, 92, 246, 0.1);
 }
 
 /* Grid Pattern */
@@ -307,17 +317,17 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #22d3ee, #14b8a6);
+  background: linear-gradient(180deg, #8b5cf6, #7c3aed);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #67e8f9, #2dd4bf);
+  background: linear-gradient(180deg, #a78bfa, #8b5cf6);
 }
 
 /* Selection */
 ::selection {
-  background: rgba(34, 211, 238, 0.3);
+  background: rgba(139, 92, 246, 0.3);
   color: white;
 }
 
@@ -328,6 +338,93 @@ html {
 
 /* Focus Styles */
 *:focus-visible {
-  outline: 2px solid #22d3ee;
+  outline: 2px solid #8b5cf6;
   outline-offset: 2px;
+}
+
+/* Three.js Canvas Styles */
+.base-canvas-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.base-canvas-container canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-3d-canvas,
+.platform-3d-canvas,
+.cta-3d-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.base-canvas-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-float-slow,
+  .animate-pulse-glow,
+  .animate-rotate-slow,
+  .animate-gradient,
+  .animate-shimmer,
+  .animate-border-flow,
+  .animate-orbit,
+  .animate-data-pulse,
+  .animate-morph,
+  .animate-wave {
+    animation: none !important;
+  }
+
+  .base-canvas-container canvas {
+    display: none;
+  }
+
+  .base-canvas-fallback {
+    display: flex;
+  }
+}
+
+/* WebGL Performance Hints */
+.hero-3d-canvas canvas,
+.platform-3d-canvas canvas,
+.cta-3d-canvas canvas {
+  touch-action: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 3D Scene Loading State */
+.canvas-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+.canvas-loading::after {
+  content: '';
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(34, 211, 238, 0.3);
+  border-top-color: #22d3ee;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }

@@ -33,14 +33,12 @@ export default function CTASection() {
   ];
 
   return (
-    <section id="contact" ref={ref} className="relative py-32 bg-slate-950 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 grid-pattern opacity-20" />
+    <section id="contact" ref={ref} className="relative py-32 bg-[#08080f] overflow-hidden">
 
-      {/* Animated Gradient Background */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-gradient-to-br from-cyan-500/20 via-purple-500/10 to-teal-500/20 rounded-full blur-[150px] animate-pulse-glow" />
-      </div>
+      {/* Subtle accent glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] rounded-full opacity-30"
+        style={{ background: 'radial-gradient(ellipse, rgba(139, 92, 246, 0.1) 0%, transparent 70%)' }}
+      />
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         {/* Main CTA Card */}
@@ -51,7 +49,7 @@ export default function CTASection() {
           className="relative"
         >
           {/* Glow Effect */}
-          <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-teal-500/20 rounded-[3rem] blur-3xl" />
+          <div className="absolute -inset-4 bg-gradient-to-r from-violet-500/20 via-purple-500/20 to-purple-500/20 rounded-[3rem] blur-3xl" />
 
           <div className="relative p-8 md:p-12 lg:p-16 rounded-3xl border border-white/10 bg-slate-900/80 backdrop-blur-xl overflow-hidden">
             {/* Background Pattern */}
@@ -66,10 +64,10 @@ export default function CTASection() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ delay: 0.2 }}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 mb-6"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6"
                 >
-                  <Sparkles className="w-4 h-4 text-cyan-400" />
-                  <span className="text-sm font-medium text-cyan-400">Start Your Journey</span>
+                  <Sparkles className="w-4 h-4 text-violet-400" />
+                  <span className="text-sm font-medium text-violet-400">Start Your Journey</span>
                 </motion.div>
 
                 <motion.h2
@@ -88,7 +86,7 @@ export default function CTASection() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ delay: 0.4 }}
-                  className="text-xl text-slate-400 mb-8"
+                  className="text-xl text-slate-300 mb-8"
                 >
                   Join hundreds of engineering teams who have eliminated alert fatigue and reduced MTTR by 94% with autonomous AI.
                 </motion.p>
@@ -102,7 +100,7 @@ export default function CTASection() {
                 >
                   {benefits.map((benefit, i) => (
                     <div key={i} className="flex items-center gap-2 text-slate-300">
-                      <benefit.icon className="w-5 h-5 text-cyan-400" />
+                      <benefit.icon className="w-5 h-5 text-violet-400" />
                       <span>{benefit.text}</span>
                     </div>
                   ))}
@@ -142,7 +140,7 @@ export default function CTASection() {
                     {/* Email Signup */}
                     <div className="p-6 rounded-2xl border border-white/10 bg-slate-800/50 backdrop-blur-xl">
                       <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-                        <Rocket className="w-5 h-5 text-cyan-400" />
+                        <Rocket className="w-5 h-5 text-violet-400" />
                         Start Free Trial
                       </h3>
                       <form onSubmit={handleSubmit} className="space-y-4">
@@ -153,13 +151,13 @@ export default function CTASection() {
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             placeholder="Enter your work email"
-                            className="w-full pl-12 pr-4 py-4 rounded-xl bg-slate-900/50 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500/50 transition-colors"
+                            className="w-full pl-12 pr-4 py-4 rounded-xl bg-slate-900/50 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-violet-500/50 transition-colors"
                             required
                           />
                         </div>
                         <button
                           type="submit"
-                          className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 text-slate-900 font-semibold hover:from-cyan-400 hover:to-teal-400 transition-all shadow-lg shadow-cyan-500/25"
+                          className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-gradient-to-r from-violet-500 to-purple-500 text-slate-900 font-semibold hover:from-violet-400 hover:to-purple-400 transition-all shadow-lg shadow-violet-500/25"
                         >
                           Get Started Free
                           <ArrowRight className="w-5 h-5" />
@@ -190,7 +188,7 @@ export default function CTASection() {
                       <span>Enterprise needs?</span>
                       <a
                         href="mailto:sales@kontrolity.com"
-                        className="flex items-center gap-1 text-cyan-400 hover:text-cyan-300 transition-colors"
+                        className="flex items-center gap-1 text-violet-400 hover:text-violet-300 transition-colors"
                       >
                         <MessageSquare className="w-4 h-4" />
                         Contact Sales
@@ -212,7 +210,7 @@ export default function CTASection() {
                       Check your email for next steps to get started with Kontrolity.
                     </p>
                     <p className="text-sm text-slate-500">
-                      In the meantime, explore <a href="https://kubegraf.io" className="text-cyan-400 hover:text-cyan-300">KubeGraf</a>
+                      In the meantime, explore <a href="https://kubegraf.io" className="text-violet-400 hover:text-violet-300">KubeGraf</a>
                     </p>
                   </motion.div>
                 )}

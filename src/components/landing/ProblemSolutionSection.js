@@ -54,7 +54,7 @@ export default function ProblemSolutionSection() {
       icon: Brain,
       title: 'Autonomous Analysis',
       description: 'AI that understands context, not just metrics. Root cause in seconds, not hours.',
-      color: 'cyan',
+      color: 'blue',
     },
     {
       icon: Zap,
@@ -77,12 +77,7 @@ export default function ProblemSolutionSection() {
   ];
 
   return (
-    <section ref={ref} className="relative py-32 bg-slate-950 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 grid-pattern opacity-20" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-gradient-to-br from-red-500/5 via-transparent to-cyan-500/5 rounded-full blur-3xl" />
-      </div>
+    <section ref={ref} className="relative py-32 bg-[#08080f] overflow-hidden">
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
@@ -96,7 +91,7 @@ export default function ProblemSolutionSection() {
             Infrastructure Complexity is{' '}
             <span className="text-red-400">Breaking</span> Teams
           </h2>
-          <p className="text-xl text-slate-400 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
             Modern infrastructure has outpaced human ability to manage it.
             Your team is fighting fires instead of building the future.
           </p>
@@ -164,9 +159,9 @@ export default function ProblemSolutionSection() {
           className="flex justify-center mb-24"
         >
           <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-cyan-500 rounded-full blur-xl opacity-30" />
+            <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-violet-500 rounded-full blur-xl opacity-30" />
             <div className="relative w-20 h-20 rounded-full bg-gradient-to-br from-slate-800 to-slate-900 border border-white/10 flex items-center justify-center">
-              <ArrowRight className="w-8 h-8 text-cyan-400 animate-pulse" />
+              <ArrowRight className="w-8 h-8 text-violet-400 animate-pulse" />
             </div>
           </div>
         </motion.div>
@@ -178,15 +173,15 @@ export default function ProblemSolutionSection() {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 mb-6">
-            <CheckCircle2 className="w-4 h-4 text-cyan-400" />
-            <span className="text-sm font-medium text-cyan-400">The Kontrolity Way</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6">
+            <CheckCircle2 className="w-4 h-4 text-violet-400" />
+            <span className="text-sm font-medium text-violet-400">The Kontrolity Way</span>
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
             From Chaos to{' '}
             <span className="gradient-text">Autonomy</span>
           </h2>
-          <p className="text-xl text-slate-400 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
             Let AI handle the complexity. Your team focuses on innovation while
             Kontrolity keeps everything running perfectly.
           </p>
@@ -208,23 +203,23 @@ export default function ProblemSolutionSection() {
               className="group relative"
             >
               <div className={`absolute inset-0 bg-gradient-to-br ${
-                solution.color === 'cyan' ? 'from-cyan-500/20' :
+                solution.color === 'blue' ? 'from-violet-500/20' :
                 solution.color === 'emerald' ? 'from-emerald-500/20' :
-                solution.color === 'purple' ? 'from-purple-500/20' : 'from-teal-500/20'
+                solution.color === 'purple' ? 'from-purple-500/20' : 'from-purple-500/20'
               } to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity`} />
 
               <div className={`relative h-full p-8 rounded-2xl border ${
-                solution.color === 'cyan' ? 'border-cyan-500/20 hover:border-cyan-500/40' :
+                solution.color === 'blue' ? 'border-violet-500/20 hover:border-violet-500/40' :
                 solution.color === 'emerald' ? 'border-emerald-500/20 hover:border-emerald-500/40' :
                 solution.color === 'purple' ? 'border-purple-500/20 hover:border-purple-500/40' :
-                'border-teal-500/20 hover:border-teal-500/40'
+                'border-purple-500/20 hover:border-purple-500/40'
               } bg-slate-900/50 backdrop-blur-xl transition-all`}>
                 <div className="flex items-start gap-4">
                   <div className={`flex-shrink-0 w-14 h-14 rounded-xl flex items-center justify-center ${
-                    solution.color === 'cyan' ? 'bg-gradient-to-br from-cyan-500 to-teal-500' :
+                    solution.color === 'blue' ? 'bg-gradient-to-br from-violet-500 to-purple-500' :
                     solution.color === 'emerald' ? 'bg-gradient-to-br from-emerald-500 to-green-500' :
                     solution.color === 'purple' ? 'bg-gradient-to-br from-purple-500 to-pink-500' :
-                    'bg-gradient-to-br from-teal-500 to-cyan-500'
+                    'bg-gradient-to-br from-purple-500 to-violet-500'
                   }`}>
                     <solution.icon className="w-7 h-7 text-white" />
                   </div>
@@ -241,9 +236,9 @@ export default function ProblemSolutionSection() {
 
                 {/* Animated corner accent */}
                 <div className={`absolute top-0 right-0 w-24 h-24 opacity-20 ${
-                  solution.color === 'cyan' ? 'bg-cyan-500' :
+                  solution.color === 'blue' ? 'bg-violet-500' :
                   solution.color === 'emerald' ? 'bg-emerald-500' :
-                  solution.color === 'purple' ? 'bg-purple-500' : 'bg-teal-500'
+                  solution.color === 'purple' ? 'bg-purple-500' : 'bg-purple-500'
                 } blur-3xl rounded-full -translate-y-1/2 translate-x-1/2`} />
               </div>
             </motion.div>
@@ -262,7 +257,7 @@ export default function ProblemSolutionSection() {
           </p>
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-gradient-to-r from-cyan-500 to-teal-500 text-slate-900 font-semibold hover:from-cyan-400 hover:to-teal-400 transition-all shadow-lg shadow-cyan-500/25"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-gradient-to-r from-violet-500 to-purple-500 text-slate-900 font-semibold hover:from-violet-400 hover:to-purple-400 transition-all shadow-lg shadow-violet-500/25"
           >
             Start Your Journey
             <ArrowRight className="w-5 h-5" />

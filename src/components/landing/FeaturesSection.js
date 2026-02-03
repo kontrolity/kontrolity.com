@@ -34,25 +34,18 @@ const FeatureCard = ({ feature, index, size = 'normal' }) => {
       transition={{ delay: index * 0.1 }}
       className={`group relative ${sizeClasses[size]}`}
     >
-      <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-
-      <div className={`relative h-full p-6 ${size === 'large' ? 'p-8' : ''} rounded-2xl border border-white/10 bg-slate-900/50 backdrop-blur-xl hover:border-white/20 transition-all overflow-hidden`}>
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:20px_20px]" />
-        </div>
-
+      <div className={`relative h-full p-6 ${size === 'large' ? 'p-8' : ''} rounded-2xl border border-slate-200 bg-slate-50 hover:border-violet-300 hover:shadow-lg transition-all`}>
         {/* Icon */}
-        <div className={`relative inline-flex items-center justify-center ${size === 'large' ? 'w-16 h-16' : 'w-12 h-12'} rounded-xl bg-gradient-to-br ${feature.iconGradient} mb-4 shadow-lg`}>
-          <feature.icon className={`${size === 'large' ? 'w-8 h-8' : 'w-6 h-6'} text-white`} />
+        <div className={`relative inline-flex items-center justify-center ${size === 'large' ? 'w-14 h-14' : 'w-11 h-11'} rounded-xl bg-violet-100 mb-4`}>
+          <feature.icon className={`${size === 'large' ? 'w-7 h-7' : 'w-5 h-5'} text-violet-600`} />
         </div>
 
         {/* Content */}
-        <h3 className={`relative ${size === 'large' ? 'text-2xl' : 'text-lg'} font-bold text-white mb-2`}>
+        <h3 className={`relative ${size === 'large' ? 'text-2xl' : 'text-lg'} font-bold text-slate-900 mb-2`}>
           {feature.title}
         </h3>
 
-        <p className={`relative text-slate-400 ${size === 'large' ? 'text-base' : 'text-sm'} leading-relaxed mb-4`}>
+        <p className={`relative text-slate-600 ${size === 'large' ? 'text-base' : 'text-sm'} leading-relaxed mb-4`}>
           {feature.description}
         </p>
 
@@ -61,24 +54,13 @@ const FeatureCard = ({ feature, index, size = 'normal' }) => {
           <div className="relative flex flex-wrap gap-4 mt-auto">
             {feature.stats.map((stat, i) => (
               <div key={i} className="flex items-center gap-2">
-                <div className={`w-2 h-2 rounded-full ${stat.color}`} />
-                <span className="text-sm text-slate-300">{stat.label}</span>
+                <div className="w-2 h-2 rounded-full bg-violet-500" />
+                <span className="text-sm text-slate-600">{stat.label}</span>
               </div>
             ))}
           </div>
         )}
 
-        {/* Visual Element for Large Cards */}
-        {size === 'large' && feature.visual && (
-          <div className="absolute bottom-0 right-0 w-1/2 h-1/2 opacity-20">
-            <feature.visual className="w-full h-full text-white" />
-          </div>
-        )}
-
-        {/* Hover Arrow */}
-        <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
-          <ArrowRight className={`w-5 h-5 ${feature.textColor} group-hover:translate-x-1 transition-transform`} />
-        </div>
       </div>
     </motion.div>
   );
@@ -93,14 +75,14 @@ export default function FeaturesSection() {
       icon: Brain,
       title: 'Autonomous Root Cause Analysis',
       description: 'AI that understands context across your entire stack. Identifies root causes in seconds, not hours. No more manual log diving.',
-      gradient: 'from-cyan-500/20 to-teal-500/20',
-      iconGradient: 'from-cyan-500 to-teal-500',
-      textColor: 'text-cyan-400',
+      gradient: 'from-violet-500/20 to-purple-500/20',
+      iconGradient: 'from-violet-500 to-purple-500',
+      textColor: 'text-violet-400',
       size: 'large',
       visual: Brain,
       stats: [
-        { label: '94% faster resolution', color: 'bg-cyan-400' },
-        { label: 'Cross-service correlation', color: 'bg-teal-400' },
+        { label: '94% faster resolution', color: 'bg-violet-400' },
+        { label: 'Cross-service correlation', color: 'bg-purple-400' },
       ],
     },
     {
@@ -138,9 +120,9 @@ export default function FeaturesSection() {
       icon: GitBranch,
       title: 'Dependency Mapping',
       description: 'Automatic service relationship discovery. Understand blast radius instantly.',
-      gradient: 'from-blue-500/20 to-cyan-500/20',
-      iconGradient: 'from-blue-500 to-cyan-500',
-      textColor: 'text-blue-400',
+      gradient: 'from-violet-500/20 to-violet-500/20',
+      iconGradient: 'from-violet-500 to-violet-500',
+      textColor: 'text-violet-400',
       size: 'normal',
     },
     {
@@ -165,9 +147,9 @@ export default function FeaturesSection() {
       icon: Search,
       title: 'Natural Language Queries',
       description: 'Ask questions in plain English. "Why did payment latency spike yesterday?" Get instant, accurate answers.',
-      gradient: 'from-teal-500/20 to-emerald-500/20',
-      iconGradient: 'from-teal-500 to-emerald-500',
-      textColor: 'text-teal-400',
+      gradient: 'from-purple-500/20 to-emerald-500/20',
+      iconGradient: 'from-purple-500 to-emerald-500',
+      textColor: 'text-purple-400',
       size: 'wide',
     },
     {
@@ -183,23 +165,15 @@ export default function FeaturesSection() {
       icon: Globe,
       title: 'Multi-Cloud Support',
       description: 'AWS, GCP, Azure, and on-prem. One platform for your entire infrastructure, regardless of where it runs.',
-      gradient: 'from-indigo-500/20 to-violet-500/20',
-      iconGradient: 'from-indigo-500 to-violet-500',
-      textColor: 'text-indigo-400',
+      gradient: 'from-purple-500/20 to-violet-500/20',
+      iconGradient: 'from-purple-500 to-violet-500',
+      textColor: 'text-purple-400',
       size: 'normal',
     },
   ];
 
   return (
-    <section ref={ref} className="relative py-32 bg-slate-950 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 grid-pattern opacity-20" />
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent" />
-
-      {/* Animated Blobs */}
-      <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-[128px] animate-pulse-glow" />
-      <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-[128px] animate-pulse-glow" style={{ animationDelay: '1s' }} />
-
+    <section ref={ref} className="relative py-32 bg-white overflow-hidden">
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -208,15 +182,15 @@ export default function FeaturesSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 mb-6">
-            <Layers className="w-4 h-4 text-cyan-400" />
-            <span className="text-sm font-medium text-cyan-400">Powerful Capabilities</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-50 border border-violet-200 mb-6">
+            <Layers className="w-4 h-4 text-violet-600" />
+            <span className="text-sm font-medium text-violet-600">Powerful Capabilities</span>
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
             Everything You Need for{' '}
-            <span className="gradient-text">Autonomous Ops</span>
+            <span className="text-violet-600">Autonomous Ops</span>
           </h2>
-          <p className="text-xl text-slate-400 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
             A comprehensive toolkit for managing modern infrastructure with AI-powered intelligence at every layer.
           </p>
         </motion.div>
@@ -241,12 +215,12 @@ export default function FeaturesSection() {
           transition={{ delay: 0.5 }}
           className="text-center mt-16"
         >
-          <p className="text-slate-400 mb-6">
+          <p className="text-slate-500 mb-6">
             And this is just the beginning. Our AI keeps learning and improving.
           </p>
           <a
             href="/documentation"
-            className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 font-medium transition-colors"
+            className="inline-flex items-center gap-2 text-violet-600 hover:text-violet-700 font-medium transition-colors"
           >
             Explore all features
             <ArrowRight className="w-4 h-4" />
