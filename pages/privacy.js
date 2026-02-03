@@ -13,7 +13,7 @@ export default function Privacy() {
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
             <div className="flex items-center gap-3 mb-6">
-              <Shield className="w-10 h-10 text-cyan-400" />
+              <Shield className="w-10 h-10 text-violet-400" />
               <h1 className="text-4xl md:text-5xl font-bold text-white">Privacy Policy</h1>
             </div>
             <p className="text-slate-400 mb-8">Last updated: January 2026</p>
@@ -44,7 +44,7 @@ export default function Privacy() {
                 <h2 className="text-2xl font-bold text-white mb-4">Contact Us</h2>
                 <p className="text-slate-300">
                   If you have any questions about this Privacy Policy, please contact us at{' '}
-                  <a href="mailto:contact@kontrolity.com" className="text-cyan-400 hover:underline">
+                  <a href="mailto:contact@kontrolity.com" className="text-violet-400 hover:underline">
                     contact@kontrolity.com
                   </a>
                 </p>

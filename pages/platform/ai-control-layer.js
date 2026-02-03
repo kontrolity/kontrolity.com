@@ -64,7 +64,7 @@ export default function AIControlLayer() {
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-6 lg:px-8 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-cyan-900/20 via-slate-950 to-slate-950" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-violet-900/20 via-slate-950 to-slate-950" />
 
         <div className="relative max-w-5xl mx-auto text-center">
           <motion.div
@@ -72,12 +72,12 @@ export default function AIControlLayer() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-sm font-medium mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-400 text-sm font-medium mb-6">
               <Sparkles className="w-4 h-4" />
               Platform Feature
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
-              <span className="bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-violet-400 via-purple-400 to-purple-400 bg-clip-text text-transparent">
                 AI Control Layer
               </span>
             </h1>
@@ -87,7 +87,7 @@ export default function AIControlLayer() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-slate-900 bg-gradient-to-r from-cyan-400 to-teal-400 hover:from-cyan-300 hover:to-teal-300 rounded-xl transition-all shadow-lg shadow-cyan-500/25"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-slate-900 bg-gradient-to-r from-violet-400 to-purple-400 hover:from-violet-300 hover:to-purple-300 rounded-xl transition-all shadow-lg shadow-violet-500/25"
               >
                 Get Started
                 <ArrowRight className="w-4 h-4" />
@@ -111,7 +111,7 @@ export default function AIControlLayer() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-br from-cyan-500/10 to-teal-500/10 rounded-3xl p-12 border border-cyan-500/20"
+            className="bg-gradient-to-br from-violet-500/10 to-purple-500/10 rounded-3xl p-12 border border-violet-500/20"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">What is AI Control Layer?</h2>
             <p className="text-lg text-slate-300 leading-relaxed mb-6">
@@ -148,10 +148,10 @@ export default function AIControlLayer() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-slate-800/50 rounded-2xl p-8 border border-white/10 hover:border-cyan-500/30 transition-all"
+                className="bg-slate-800/50 rounded-2xl p-8 border border-white/10 hover:border-violet-500/30 transition-all"
               >
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-500/20 to-teal-500/20 flex items-center justify-center mb-6">
-                  <feature.icon className="w-7 h-7 text-cyan-400" />
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-violet-500/20 to-purple-500/20 flex items-center justify-center mb-6">
+                  <feature.icon className="w-7 h-7 text-violet-400" />
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-3">{feature.title}</h3>
                 <p className="text-slate-400 leading-relaxed">{feature.description}</p>
@@ -178,7 +178,7 @@ export default function AIControlLayer() {
               <ul className="space-y-4">
                 {capabilities.map((capability, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
+                    <CheckCircle className="w-5 h-5 text-violet-400 flex-shrink-0 mt-0.5" />
                     <span className="text-slate-300">{capability}</span>
                   </li>
                 ))}
@@ -190,9 +190,9 @@ export default function AIControlLayer() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-cyan-500/10 to-teal-500/10 rounded-3xl p-12 border border-cyan-500/20 aspect-square flex items-center justify-center"
+              className="bg-gradient-to-br from-violet-500/10 to-purple-500/10 rounded-3xl p-12 border border-violet-500/20 aspect-square flex items-center justify-center"
             >
-              <Brain className="w-48 h-48 text-cyan-400/30" />
+              <Brain className="w-48 h-48 text-violet-400/30" />
             </motion.div>
           </div>
         </div>
@@ -240,7 +240,7 @@ export default function AIControlLayer() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-br from-cyan-500/10 to-teal-500/10 rounded-3xl p-12 border border-cyan-500/20 text-center"
+            className="bg-gradient-to-br from-violet-500/10 to-purple-500/10 rounded-3xl p-12 border border-violet-500/20 text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Experience Autonomous Infrastructure
@@ -251,7 +251,7 @@ export default function AIControlLayer() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-slate-900 bg-gradient-to-r from-cyan-400 to-teal-400 hover:from-cyan-300 hover:to-teal-300 rounded-xl transition-all shadow-lg shadow-cyan-500/25"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-slate-900 bg-gradient-to-r from-violet-400 to-purple-400 hover:from-violet-300 hover:to-purple-300 rounded-xl transition-all shadow-lg shadow-violet-500/25"
               >
                 Request Demo
                 <ArrowRight className="w-4 h-4" />

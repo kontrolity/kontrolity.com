@@ -47,7 +47,7 @@ export default function KubeGrafProofSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full bg-gradient-to-r from-emerald-500/10 via-teal-500/10 to-emerald-500/10 border border-emerald-500/20">
+          <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full bg-gradient-to-r from-emerald-500/10 via-purple-500/10 to-emerald-500/10 border border-emerald-500/20">
             <CheckCircle2 className="w-4 h-4 text-emerald-400" />
             <span className="text-sm font-medium text-emerald-400">
               Proven in Production
@@ -55,7 +55,7 @@ export default function KubeGrafProofSection() {
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
             Proof:{' '}
-            <span className="bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-violet-400 via-purple-400 to-emerald-400 bg-clip-text text-transparent">
               KubeGraf
             </span>{' '}
             Reduces MTTR<br className="hidden md:block" /> from Hours to Minutes
@@ -75,11 +75,11 @@ export default function KubeGrafProofSection() {
               transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
               className={`rounded-3xl p-8 border ${
                 capability.highlight
-                  ? 'bg-gradient-to-br from-cyan-500/10 to-teal-500/10 border-cyan-500/30'
+                  ? 'bg-gradient-to-br from-violet-500/10 to-purple-500/10 border-violet-500/30'
                   : 'bg-slate-800/50 border-white/10'
-              } hover:border-cyan-500/40 transition-all`}
+              } hover:border-violet-500/40 transition-all`}
             >
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-400 to-teal-400 flex items-center justify-center mb-6">
+              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-400 to-purple-400 flex items-center justify-center mb-6">
                 <capability.icon className="w-7 h-7 text-slate-900" />
               </div>
               <h3 className="text-xl font-bold text-white mb-4">{capability.title}</h3>
@@ -90,9 +90,9 @@ export default function KubeGrafProofSection() {
                     <div className="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-2">Traditional Approach</div>
                     <p className="text-slate-400">{capability.traditional}</p>
                   </div>
-                  <div className="h-px bg-gradient-to-r from-cyan-500/20 via-teal-500/20 to-transparent" />
+                  <div className="h-px bg-gradient-to-r from-violet-500/20 via-purple-500/20 to-transparent" />
                   <div>
-                    <div className="text-sm font-semibold text-cyan-400 uppercase tracking-wide mb-2">KubeGraf</div>
+                    <div className="text-sm font-semibold text-violet-400 uppercase tracking-wide mb-2">KubeGraf</div>
                     <p className="text-white font-medium">{capability.kubegraf}</p>
                   </div>
                 </div>
@@ -108,7 +108,7 @@ export default function KubeGrafProofSection() {
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.5 }}
-          className="bg-gradient-to-br from-emerald-500/10 via-teal-500/10 to-cyan-500/10 rounded-3xl p-12 border border-emerald-500/20 mb-16"
+          className="bg-gradient-to-br from-emerald-500/10 via-purple-500/10 to-violet-500/10 rounded-3xl p-12 border border-emerald-500/20 mb-16"
         >
           <h3 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
             Business Impact
@@ -122,10 +122,10 @@ export default function KubeGrafProofSection() {
                 transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
                 className="text-center"
               >
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-400 flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-400 to-purple-400 flex items-center justify-center mx-auto mb-4">
                   <metric.icon className="w-8 h-8 text-slate-900" />
                 </div>
-                <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent mb-2">
+                <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-emerald-400 to-purple-400 bg-clip-text text-transparent mb-2">
                   {metric.stat}
                 </div>
                 <div className="text-lg font-semibold text-white mb-1">{metric.label}</div>
@@ -214,7 +214,7 @@ export default function KubeGrafProofSection() {
             href="https://kubegraf.io"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-4 text-lg font-semibold text-slate-900 bg-gradient-to-r from-cyan-400 to-teal-400 hover:from-cyan-300 hover:to-teal-300 rounded-2xl transition-all shadow-2xl shadow-cyan-500/25 hover:shadow-cyan-500/40"
+            className="inline-flex items-center gap-3 px-8 py-4 text-lg font-semibold text-slate-900 bg-gradient-to-r from-violet-400 to-purple-400 hover:from-violet-300 hover:to-purple-300 rounded-2xl transition-all shadow-2xl shadow-violet-500/25 hover:shadow-violet-500/40"
           >
             Try KubeGraf Free
             <ArrowRight className="w-5 h-5" />

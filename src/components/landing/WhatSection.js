@@ -42,7 +42,7 @@ export default function WhatSection() {
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
             What is{' '}
-            <span className="bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-violet-400 via-purple-400 to-emerald-400 bg-clip-text text-transparent">
               Autonomous Infrastructure Intelligence
             </span>
             ?
@@ -57,7 +57,7 @@ export default function WhatSection() {
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="bg-gradient-to-br from-cyan-500/10 to-teal-500/10 rounded-3xl p-8 md:p-12 border border-cyan-500/20 mb-16"
+          className="bg-gradient-to-br from-violet-500/10 to-purple-500/10 rounded-3xl p-8 md:p-12 border border-violet-500/20 mb-16"
         >
           <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">
             We're creating the autonomous control layer that sits above your existing infrastructure
@@ -95,11 +95,11 @@ export default function WhatSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-                className="bg-slate-800/50 rounded-2xl p-6 border border-white/10 hover:border-cyan-500/30 transition-all"
+                className="bg-slate-800/50 rounded-2xl p-6 border border-white/10 hover:border-violet-500/30 transition-all"
               >
                 <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500/20 to-teal-500/20 flex items-center justify-center border border-cyan-500/20">
-                    <problem.icon className="w-6 h-6 text-cyan-400" />
+                  <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-violet-500/20 to-purple-500/20 flex items-center justify-center border border-violet-500/20">
+                    <problem.icon className="w-6 h-6 text-violet-400" />
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold text-white mb-2">{problem.title}</h4>
@@ -122,7 +122,7 @@ export default function WhatSection() {
           <div className="grid md:grid-cols-2 gap-8">
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-400 to-teal-400 flex items-center justify-center text-slate-900 font-bold">
+                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-400 to-purple-400 flex items-center justify-center text-slate-900 font-bold">
                   1
                 </div>
                 <h4 className="text-lg font-semibold text-white">AI That Understands Context</h4>
@@ -133,7 +133,7 @@ export default function WhatSection() {
             </div>
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-400 to-teal-400 flex items-center justify-center text-slate-900 font-bold">
+                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-400 to-purple-400 flex items-center justify-center text-slate-900 font-bold">
                   2
                 </div>
                 <h4 className="text-lg font-semibold text-white">Autonomous Systems That Act</h4>
@@ -144,7 +144,7 @@ export default function WhatSection() {
             </div>
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-400 to-teal-400 flex items-center justify-center text-slate-900 font-bold">
+                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-400 to-purple-400 flex items-center justify-center text-slate-900 font-bold">
                   3
                 </div>
                 <h4 className="text-lg font-semibold text-white">Platform That Unifies</h4>
@@ -155,7 +155,7 @@ export default function WhatSection() {
             </div>
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-400 to-teal-400 flex items-center justify-center text-slate-900 font-bold">
+                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-400 to-purple-400 flex items-center justify-center text-slate-900 font-bold">
                   4
                 </div>
                 <h4 className="text-lg font-semibold text-white">Intelligence That Compounds</h4>

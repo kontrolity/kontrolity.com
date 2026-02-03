@@ -97,8 +97,8 @@ export default function Navbar() {
                               className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition-all group/item"
                             >
                               {item.icon && (
-                                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500/20 to-teal-500/20 border border-cyan-500/20 flex items-center justify-center group-hover/item:border-cyan-500/40 transition-colors">
-                                  <item.icon className="w-5 h-5 text-cyan-400" />
+                                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-violet-500/20 to-purple-500/20 border border-violet-500/20 flex items-center justify-center group-hover/item:border-violet-500/40 transition-colors">
+                                  <item.icon className="w-5 h-5 text-violet-400" />
                                 </div>
                               )}
                               <div className="flex-1 min-w-0">
@@ -130,7 +130,7 @@ export default function Navbar() {
             <div className="hidden lg:flex items-center gap-3">
               <a
                 href="#contact"
-                className="group flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-slate-900 bg-gradient-to-r from-cyan-400 to-teal-400 hover:from-cyan-300 hover:to-teal-300 rounded-xl transition-all shadow-lg shadow-cyan-500/25"
+                className="group flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-slate-900 bg-gradient-to-r from-violet-400 to-purple-400 hover:from-violet-300 hover:to-purple-300 rounded-xl transition-all shadow-lg shadow-violet-500/25"
               >
                 Get Started
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
@@ -180,7 +180,7 @@ export default function Navbar() {
               <a
                 href="#contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="block mt-6 px-6 py-3 text-center text-slate-900 font-semibold bg-gradient-to-r from-cyan-400 to-teal-400 rounded-xl"
+                className="block mt-6 px-6 py-3 text-center text-slate-900 font-semibold bg-gradient-to-r from-violet-400 to-purple-400 rounded-xl"
               >
                 Get Started
               </a>

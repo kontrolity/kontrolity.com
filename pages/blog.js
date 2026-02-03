@@ -94,7 +94,7 @@ export default function Blog() {
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-6 lg:px-8 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-cyan-900/20 via-slate-950 to-slate-950" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-violet-900/20 via-slate-950 to-slate-950" />
 
         <div className="relative max-w-5xl mx-auto text-center">
           <motion.div
@@ -104,7 +104,7 @@ export default function Blog() {
           >
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
               Kontrolity{' '}
-              <span className="bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-violet-400 via-purple-400 to-purple-400 bg-clip-text text-transparent">
                 Blog
               </span>
             </h1>
@@ -124,16 +124,16 @@ export default function Blog() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 rounded-3xl overflow-hidden border border-cyan-500/30 hover:border-cyan-500/50 transition-all group cursor-pointer">
+            <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 rounded-3xl overflow-hidden border border-violet-500/30 hover:border-violet-500/50 transition-all group cursor-pointer">
               <div className="grid lg:grid-cols-2 gap-8 p-8 md:p-12">
                 {/* Content */}
                 <div className="flex flex-col justify-center">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-sm font-medium mb-6 w-fit">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-400 text-sm font-medium mb-6 w-fit">
                     <Sparkles className="w-4 h-4" />
                     Featured Post
                   </div>
 
-                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors">
+                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 group-hover:text-violet-400 transition-colors">
                     {featuredPost.title}
                   </h2>
 
@@ -154,7 +154,7 @@ export default function Blog() {
 
                   <a
                     href="#"
-                    className="inline-flex items-center gap-2 text-cyan-400 font-semibold group-hover:gap-3 transition-all"
+                    className="inline-flex items-center gap-2 text-violet-400 font-semibold group-hover:gap-3 transition-all"
                   >
                     Read Article
                     <ArrowRight className="w-5 h-5" />
@@ -162,8 +162,8 @@ export default function Blog() {
                 </div>
 
                 {/* Visual */}
-                <div className="flex items-center justify-center bg-gradient-to-br from-cyan-500/10 to-teal-500/10 rounded-2xl p-12">
-                  <featuredPost.image className="w-32 h-32 text-cyan-400" />
+                <div className="flex items-center justify-center bg-gradient-to-br from-violet-500/10 to-purple-500/10 rounded-2xl p-12">
+                  <featuredPost.image className="w-32 h-32 text-violet-400" />
                 </div>
               </div>
             </div>
@@ -185,8 +185,8 @@ export default function Blog() {
                 onClick={() => setSelectedCategory(category)}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                   selectedCategory === category
-                    ? 'bg-gradient-to-r from-cyan-400 to-teal-400 text-slate-900'
-                    : 'bg-slate-800/50 hover:bg-slate-800 border border-white/10 hover:border-cyan-500/30 text-slate-300 hover:text-white'
+                    ? 'bg-gradient-to-r from-violet-400 to-purple-400 text-slate-900'
+                    : 'bg-slate-800/50 hover:bg-slate-800 border border-white/10 hover:border-violet-500/30 text-slate-300 hover:text-white'
                 }`}
               >
                 {category}
@@ -207,21 +207,21 @@ export default function Blog() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-slate-800/50 rounded-2xl overflow-hidden border border-white/10 hover:border-cyan-500/30 transition-all group cursor-pointer"
+                className="bg-slate-800/50 rounded-2xl overflow-hidden border border-white/10 hover:border-violet-500/30 transition-all group cursor-pointer"
               >
                 {/* Image Placeholder */}
-                <div className="bg-gradient-to-br from-cyan-500/10 to-teal-500/10 p-12 flex items-center justify-center">
-                  <post.image className="w-16 h-16 text-cyan-400 group-hover:scale-110 transition-transform" />
+                <div className="bg-gradient-to-br from-violet-500/10 to-purple-500/10 p-12 flex items-center justify-center">
+                  <post.image className="w-16 h-16 text-violet-400 group-hover:scale-110 transition-transform" />
                 </div>
 
                 {/* Content */}
                 <div className="p-6">
                   <div className="flex items-center gap-2 mb-3">
-                    <Tag className="w-4 h-4 text-cyan-400" />
-                    <span className="text-xs text-cyan-400 font-medium">{post.category}</span>
+                    <Tag className="w-4 h-4 text-violet-400" />
+                    <span className="text-xs text-violet-400 font-medium">{post.category}</span>
                   </div>
 
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors line-clamp-2">
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-violet-400 transition-colors line-clamp-2">
                     {post.title}
                   </h3>
 
@@ -242,7 +242,7 @@ export default function Blog() {
 
                   <div className="flex items-center justify-between pt-4 border-t border-white/10">
                     <span className="text-sm text-slate-400">{post.author}</span>
-                    <ArrowRight className="w-5 h-5 text-cyan-400 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-5 h-5 text-violet-400 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>
               </motion.article>
@@ -272,7 +272,7 @@ export default function Blog() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-br from-cyan-500/10 to-teal-500/10 rounded-3xl p-12 border border-cyan-500/20 text-center"
+            className="bg-gradient-to-br from-violet-500/10 to-purple-500/10 rounded-3xl p-12 border border-violet-500/20 text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Stay Updated
@@ -284,9 +284,9 @@ export default function Blog() {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-6 py-4 bg-slate-800/50 border border-white/10 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500/50 transition-colors"
+                className="flex-1 px-6 py-4 bg-slate-800/50 border border-white/10 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-violet-500/50 transition-colors"
               />
-              <button className="px-8 py-4 text-base font-semibold text-slate-900 bg-gradient-to-r from-cyan-400 to-teal-400 hover:from-cyan-300 hover:to-teal-300 rounded-xl transition-all shadow-lg shadow-cyan-500/25 whitespace-nowrap">
+              <button className="px-8 py-4 text-base font-semibold text-slate-900 bg-gradient-to-r from-violet-400 to-purple-400 hover:from-violet-300 hover:to-purple-300 rounded-xl transition-all shadow-lg shadow-violet-500/25 whitespace-nowrap">
                 Subscribe
               </button>
             </div>

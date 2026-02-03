@@ -44,7 +44,7 @@ export default function Support() {
         <div className="max-w-5xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              <span className="bg-gradient-to-r from-cyan-400 to-teal-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent">
                 Support
               </span>
             </h1>
@@ -64,14 +64,14 @@ export default function Support() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-slate-800/50 rounded-2xl p-8 border border-white/10 hover:border-cyan-500/30 transition-all"
+              className="bg-slate-800/50 rounded-2xl p-8 border border-white/10 hover:border-violet-500/30 transition-all"
             >
-              <channel.icon className="w-12 h-12 text-cyan-400 mb-4" />
+              <channel.icon className="w-12 h-12 text-violet-400 mb-4" />
               <h3 className="text-2xl font-bold text-white mb-3">{channel.title}</h3>
               <p className="text-slate-400 mb-6">{channel.description}</p>
               <a
                 href={channel.href}
-                className="inline-flex items-center gap-2 text-cyan-400 font-semibold hover:gap-3 transition-all"
+                className="inline-flex items-center gap-2 text-violet-400 font-semibold hover:gap-3 transition-all"
               >
                 {channel.action} <ArrowRight className="w-4 h-4" />
               </a>

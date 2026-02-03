@@ -92,7 +92,7 @@ export default function Customers() {
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-6 lg:px-8 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-cyan-900/20 via-slate-950 to-slate-950" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-violet-900/20 via-slate-950 to-slate-950" />
 
         <div className="relative max-w-5xl mx-auto text-center">
           <motion.div
@@ -102,7 +102,7 @@ export default function Customers() {
           >
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
               Trusted by{' '}
-              <span className="bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-violet-400 via-purple-400 to-purple-400 bg-clip-text text-transparent">
                 Industry Leaders
               </span>
             </h1>
@@ -126,8 +126,8 @@ export default function Customers() {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-teal-500/20 border border-cyan-500/30 mb-4 mx-auto">
-                  <stat.icon className="w-8 h-8 text-cyan-400" />
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-violet-500/20 to-purple-500/20 border border-violet-500/30 mb-4 mx-auto">
+                  <stat.icon className="w-8 h-8 text-violet-400" />
                 </div>
                 <div className="text-3xl md:text-4xl font-bold text-white mb-2">
                   {stat.value}
@@ -163,16 +163,16 @@ export default function Customers() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-slate-800/50 rounded-2xl p-8 border border-white/10 hover:border-cyan-500/30 transition-all"
+                className="bg-slate-800/50 rounded-2xl p-8 border border-white/10 hover:border-violet-500/30 transition-all"
               >
-                <Quote className="w-10 h-10 text-cyan-400 mb-6" />
+                <Quote className="w-10 h-10 text-violet-400 mb-6" />
                 <p className="text-slate-300 leading-relaxed mb-6">
                   "{testimonial.quote}"
                 </p>
                 <div className="border-t border-white/10 pt-6">
                   <div className="font-bold text-white">{testimonial.author}</div>
                   <div className="text-sm text-slate-400">{testimonial.role}</div>
-                  <div className="text-sm text-cyan-400 mt-1">{testimonial.company}</div>
+                  <div className="text-sm text-violet-400 mt-1">{testimonial.company}</div>
                   <div className="text-xs text-slate-500 mt-1">{testimonial.industry}</div>
                 </div>
               </motion.div>
@@ -210,7 +210,7 @@ export default function Customers() {
                 <div className="grid lg:grid-cols-2 gap-12">
                   {/* Left Column */}
                   <div>
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-sm font-medium mb-4">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-400 text-sm font-medium mb-4">
                       {study.industry}
                     </div>
                     <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">{study.company}</h3>
@@ -232,7 +232,7 @@ export default function Customers() {
                     <ul className="space-y-4">
                       {study.results.map((result, idx) => (
                         <li key={idx} className="flex items-start gap-3">
-                          <CheckCircle className="w-6 h-6 text-cyan-400 flex-shrink-0 mt-0.5" />
+                          <CheckCircle className="w-6 h-6 text-violet-400 flex-shrink-0 mt-0.5" />
                           <span className="text-lg text-slate-300">{result}</span>
                         </li>
                       ))}
@@ -240,7 +240,7 @@ export default function Customers() {
 
                     <a
                       href="#contact"
-                      className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-slate-900 bg-gradient-to-r from-cyan-400 to-teal-400 hover:from-cyan-300 hover:to-teal-300 rounded-xl transition-all shadow-lg shadow-cyan-500/25 mt-8"
+                      className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-slate-900 bg-gradient-to-r from-violet-400 to-purple-400 hover:from-violet-300 hover:to-purple-300 rounded-xl transition-all shadow-lg shadow-violet-500/25 mt-8"
                     >
                       Get Similar Results
                       <ArrowRight className="w-4 h-4" />
@@ -277,7 +277,7 @@ export default function Customers() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
                 viewport={{ once: true }}
-                className="bg-slate-800/50 rounded-2xl p-6 border border-white/10 hover:border-cyan-500/30 transition-all text-center"
+                className="bg-slate-800/50 rounded-2xl p-6 border border-white/10 hover:border-violet-500/30 transition-all text-center"
               >
                 <span className="text-slate-300 font-medium">{industry}</span>
               </motion.div>
@@ -294,7 +294,7 @@ export default function Customers() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-br from-cyan-500/10 to-teal-500/10 rounded-3xl p-12 border border-cyan-500/20 text-center"
+            className="bg-gradient-to-br from-violet-500/10 to-purple-500/10 rounded-3xl p-12 border border-violet-500/20 text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Join Our Growing Community
@@ -305,7 +305,7 @@ export default function Customers() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-slate-900 bg-gradient-to-r from-cyan-400 to-teal-400 hover:from-cyan-300 hover:to-teal-300 rounded-xl transition-all shadow-lg shadow-cyan-500/25"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-slate-900 bg-gradient-to-r from-violet-400 to-purple-400 hover:from-violet-300 hover:to-purple-300 rounded-xl transition-all shadow-lg shadow-violet-500/25"
               >
                 Start Your Journey
                 <ArrowRight className="w-4 h-4" />

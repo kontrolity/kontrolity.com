@@ -73,7 +73,7 @@ export default function Intelligence() {
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-6 lg:px-8 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-cyan-900/20 via-slate-950 to-slate-950" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-violet-900/20 via-slate-950 to-slate-950" />
 
         <div className="relative max-w-5xl mx-auto text-center">
           <motion.div
@@ -86,7 +86,7 @@ export default function Intelligence() {
               Product
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
-              <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-violet-400 bg-clip-text text-transparent">
                 Kontrolity Intelligence
               </span>
             </h1>

@@ -10,8 +10,8 @@ export default function BentoSection() {
   const cards = [
     {
       span: 'col-span-2 row-span-2',
-      gradient: 'from-cyan-500/20 via-teal-500/20 to-emerald-500/20',
-      border: 'border-cyan-500/30',
+      gradient: 'from-violet-500/20 via-purple-500/20 to-emerald-500/20',
+      border: 'border-violet-500/30',
       icon: Brain,
       title: 'AI-Powered Intelligence',
       description: 'Autonomous system that learns patterns, predicts failures, and takes action before incidents occur.',
@@ -20,15 +20,15 @@ export default function BentoSection() {
         <div className="relative h-48 mt-6">
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="relative">
-              <div className="w-32 h-32 rounded-full bg-gradient-to-br from-cyan-400/20 to-teal-400/20 animate-pulse" />
+              <div className="w-32 h-32 rounded-full bg-gradient-to-br from-violet-400/20 to-purple-400/20 animate-pulse" />
               <div className="absolute inset-0 flex items-center justify-center">
-                <Brain className="w-16 h-16 text-cyan-400" />
+                <Brain className="w-16 h-16 text-violet-400" />
               </div>
               {/* Neural network lines */}
               {[...Array(8)].map((_, i) => (
                 <div
                   key={i}
-                  className="absolute top-1/2 left-1/2 w-20 h-0.5 bg-gradient-to-r from-cyan-400/50 to-transparent origin-left"
+                  className="absolute top-1/2 left-1/2 w-20 h-0.5 bg-gradient-to-r from-violet-400/50 to-transparent origin-left"
                   style={{
                     transform: `rotate(${i * 45}deg)`,
                     animation: `pulse 2s ease-in-out infinite`,
@@ -63,8 +63,8 @@ export default function BentoSection() {
     },
     {
       span: 'col-span-1',
-      gradient: 'from-blue-500/20 to-indigo-500/20',
-      border: 'border-blue-500/30',
+      gradient: 'from-violet-500/20 to-purple-500/20',
+      border: 'border-violet-500/30',
       icon: Activity,
       title: 'Live Monitoring',
       description: 'Track system health in real-time with intelligent alerts.',
@@ -72,7 +72,7 @@ export default function BentoSection() {
     },
     {
       span: 'col-span-2',
-      gradient: 'from-emerald-500/20 to-teal-500/20',
+      gradient: 'from-emerald-500/20 to-purple-500/20',
       border: 'border-emerald-500/30',
       icon: Database,
       title: 'Multi-Source Correlation',
@@ -93,7 +93,7 @@ export default function BentoSection() {
   return (
     <section className="relative py-32 bg-slate-950 overflow-hidden" ref={ref}>
       {/* Background elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-cyan-900/20 via-slate-950 to-slate-950" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-violet-900/20 via-slate-950 to-slate-950" />
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
@@ -103,17 +103,17 @@ export default function BentoSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 mb-6">
-            <Sparkles className="w-4 h-4 text-cyan-400" />
-            <span className="text-sm font-medium text-cyan-400">Platform Capabilities</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6">
+            <Sparkles className="w-4 h-4 text-violet-400" />
+            <span className="text-sm font-medium text-violet-400">Platform Capabilities</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Everything you need to build{' '}
-            <span className="bg-gradient-to-r from-cyan-400 to-teal-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent">
               autonomous systems
             </span>
           </h2>
-          <p className="text-xl text-slate-400 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
             A complete platform for modern infrastructure management
           </p>
         </motion.div>
@@ -170,7 +170,7 @@ export default function BentoSection() {
                     {[40, 60, 45, 70, 55, 80, 65, 85, 75, 90].map((h, i) => (
                       <div
                         key={i}
-                        className="flex-1 bg-gradient-to-t from-blue-400 to-indigo-400 rounded-t opacity-80 hover:opacity-100 transition-opacity"
+                        className="flex-1 bg-gradient-to-t from-violet-400 to-purple-400 rounded-t opacity-80 hover:opacity-100 transition-opacity"
                         style={{ height: `${h}%` }}
                       />
                     ))}
